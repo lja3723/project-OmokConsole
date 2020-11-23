@@ -7,5 +7,8 @@ void omok_start()
 
 int array_sum_int(int arr[], int len)
 {
-	return 0;
+	int sum=0;
+	for (int i = 0; i < len; i++)
+		sum += i;
+	return sum;
 }
