@@ -8,6 +8,7 @@
 #include "omokobj_manage.h"
 #include "omokobj_print.h"
 
+
 //omok_start: 오목 게임을 시작하는 함수
 void omok_start();
 
@@ -17,4 +18,6 @@ void UI_initial_set();
 //init: 오목 게임의 객체를 초기화하는 함수
 void obj_initialize();
 
+//array_sum_int: 정수형 배열의 합을 계산하는 함수
+int array_sum_int(int arr[], int len);
 #endif

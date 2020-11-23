@@ -2,7 +2,10 @@
 
 void omok_start()
 {
-	//첫 변경테스트
-	// ㅎㅇ22
-	// ㅎㅇ 33
+	
+}
+
+int array_sum_int(int arr[], int len)
+{
+	return 0;
 }
