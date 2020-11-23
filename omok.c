@@ -12,3 +12,8 @@ int array_sum_int(int arr[], int len)
 		sum += i;
 	return sum;
 }
+
+void array_print(int arr[], int len)
+{
+	return;
+}
