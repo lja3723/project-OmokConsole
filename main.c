@@ -8,7 +8,7 @@ int main(void)
 	int arr[15];
 
 	// srand((unsigned)time(NULL));
-
+	// 4. 5. 6
 	for (int i = 0; i < 15; i++)
 		arr[i] = rand() % 30 + 1;
 
