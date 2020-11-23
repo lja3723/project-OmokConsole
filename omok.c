@@ -15,5 +15,6 @@ int array_sum_int(int arr[], int len)
 
 void array_print(int arr[], int len)
 {
-	return;
+	for (int i = 0; i < len; i++)
+		printf("%d ", arr[i]);
 }
