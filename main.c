@@ -7,6 +7,7 @@ int main(void)
 	//변경 테스트
 	int arr[15];
 
+	// 1,2,3
 	// srand((unsigned)time(NULL));
 
 	for (int i = 0; i < 15; i++)
