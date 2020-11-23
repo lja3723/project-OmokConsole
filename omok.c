@@ -2,4 +2,5 @@
 
 void omok_start()
 {
+	//첫 변경테스트
 }
