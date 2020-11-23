@@ -18,7 +18,4 @@ void UI_initial_set();
 //init: 오목 게임의 객체를 초기화하는 함수
 void obj_initialize();
 
-
-
-
 #endif
