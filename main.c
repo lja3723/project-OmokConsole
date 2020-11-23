@@ -16,6 +16,7 @@ int main(void)
 	int sum = array_sum_int(arr, 15);
 
 	array_print(arr, 15);
+	printf("\n");
 	printf("¹è¿­ÇÕ: %d\n", array_sum_int(arr, 15));	
 
 	omok_start();
