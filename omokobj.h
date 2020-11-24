@@ -1,6 +1,9 @@
 #ifndef __OMOKOBJ_H__
 #define __OMOKOBJ_H__
 
+/**
+* @file omokobj.h
+*/
 
 //ÁÂÇ¥Á¤º¸ °´Ã¼
 typedef struct _LOCATE

@@ -30,10 +30,10 @@
     <ClCompile Include="omokobj_manage.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="omokobj_print.c">
+    <ClCompile Include="omok_err.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="omok_err.c">
+    <ClCompile Include="omokobj_conio.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -50,10 +50,10 @@
     <ClInclude Include="omokobj_manage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="omokobj_print.h">
+    <ClInclude Include="omok_err.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="omok_err.h">
+    <ClInclude Include="omokobj_conio.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

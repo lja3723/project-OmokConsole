@@ -143,7 +143,7 @@
     <ClCompile Include="omok.c" />
     <ClCompile Include="omokobj.c" />
     <ClCompile Include="omokobj_manage.c" />
-    <ClCompile Include="omokobj_print.c" />
+    <ClCompile Include="omokobj_conio.c" />
     <ClCompile Include="omok_algorithm.c" />
     <ClCompile Include="omok_err.c" />
   </ItemGroup>
@@ -154,7 +154,7 @@
     <ClInclude Include="omok.h" />
     <ClInclude Include="omokobj.h" />
     <ClInclude Include="omokobj_manage.h" />
-    <ClInclude Include="omokobj_print.h" />
+    <ClInclude Include="omokobj_conio.h" />
     <ClInclude Include="omok_algorithm.h" />
     <ClInclude Include="omok_err.h" />
   </ItemGroup>
