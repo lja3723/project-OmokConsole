@@ -7,4 +7,5 @@
 
 void omok_start()
 {
+	StoneInfo k;
 }
