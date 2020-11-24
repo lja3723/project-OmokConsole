@@ -2,6 +2,7 @@
 
 int main(void)
 {
-	
+	omok_start();
+
 	return 0;
 }
