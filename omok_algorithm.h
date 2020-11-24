@@ -10,6 +10,6 @@
 #include "omokobj_conio.h"
 
 // check_win_row : 가로로 5개의 돌이 놓여있는지 확인하는 함수
-int check_win_row(Location* l, OmokPanel* o);
+int check_win_row(OmokCoord* l, OmokPanel* o);
 
 #endif
