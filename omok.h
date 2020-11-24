@@ -8,7 +8,7 @@
 #include "omokobj_manage.h"
 #include "omokobj_print.h"
 
-/*		omok: 파일 개요
+/*		[파일 개요]
 * 
 *	1. 게임 시작
 *	2. 게임 관련 객체 초기화
@@ -45,6 +45,10 @@ void UI_initial_set();
 주석 테스트 3
 */
 void obj_initialize();
+
+
+
+
 
 
 
