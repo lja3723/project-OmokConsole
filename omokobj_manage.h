@@ -7,13 +7,13 @@
 * @file omokobj_manage.h
 * 
 *	[파일 개요]
-* 오목 프로그램 객체를 관리(설정, 생성, 제거 등)하는 함수를 정의함
+* 오목 프로그램 객체를 관리(설정, 생성, 변환, 제거 등)하는 함수를 선언함
 * 
 *	[함수 종류]
 * 생성		_객체()
 * 설정		set_객체()
-* 유효성		valid_객체()
 * 변환		변환할객체_to_변환될객체()
+*	(아래는 '동적 할당이 필요한 멤버'가 있는 객체인 경우)
 * 복사		copy_객체()
 * 제거		delete_객체()
 */
@@ -37,17 +37,6 @@
 * 첫 매개변수		: 설정할 객체의 주소값
 * 그 외 매개변수		: 설정값(멤버 변수와 일대일 대응)
 * 반환값				: 설정이 잘 이루어졌으면 1, 그렇지 않으면 0을 반환
-*/ 
-
-/**
-* [객체 유효성(valid) 함수]
-* 객체 유효성 검사 계열 함수는 객체가 유효한 값으로 초기화됐는지
-* 검사하거나 '동적 할당이 필요한 멤버'가 있는 객체가 
-* 유효한 동적 할당이 되어 있는지 검사하는 역할을 담당함
-* 
-* 이름				: valid_객체()
-* 매개변수			: 유효성 검사할 객체의 주소값
-* 반환값				: 객체가 유효하면 1, 그렇지 않으면(NULL 등) 0 반환
 */
 
 /*
@@ -63,8 +52,8 @@
 
 /*
 * [객체 복사(copy) 함수]
-* 객체 복사 계열 함수는 '깊은 복사'가 필요한 객체에서 정의되며
-* 객체의 내용을 같은 타입의 객체에 '깊은 복사'하는 역할을 담당함
+* 객체 복사 계열 함수는 '동적 할당이 필요한 멤버'가 필요한 객체에서 정의되며
+* 객체의 내용을 같은 타입의 객체에 '깊은 복사(deep copy)'하는 역할을 담당함
 *
 * 이름				: copy_객체()
 * 첫 매개변수		: 복사할 객체의 주소값
@@ -89,14 +78,14 @@
 
 /*****************************************************************
 *					OmokCoord management
-* 생성(_) 설정(set) 유효성(valid) 변환(_to_, Str)
+* 생성(_) 설정(set) 변환(Str|_to_)
 ******************************************************************/
 
 /**
-* @brief OmokCoord ����
-* @param char row		: ������ �� ����, ����: 'A' ~ 'Z', ���ڰ� �߸��Ǹ� '\\0'���� �ʱ�ȭ
-* @param short col		: ������ �� ����, ����: 1 ~ 19, ���ڰ� �߸��Ǹ� 0���� �ʱ�ȭ
-* @return OmokCoord		: ������ ��ü ��ȯ
+* @brief OmokCoord 생성
+* @param char row		: 생성할 객체의 행 정보, 범위: 'A' ~ 'Z', 인자가 잘못되면 '\\0'으로 초기화
+* @param short col		: 생성할 객체의 열 정보, 범위: 1 ~ 19, 인자가 잘못되면 0으로 초기화
+* @return OmokCoord		: 생성된 객체
 *
 * @author lja3723
 * @date 2020-11-25 12:10
@@ -107,30 +96,18 @@ OmokCoord _OmokCoord(char row, short col);
 /**
 * @brief OmokCoord 설정
 * @param OmokCoord* obj	: 설정할 객체의 주소값
-* @param char row		: 설정할 행 정보, 범위: 'A' ~ 'Z', 인자가 잘못되면 '\\0'으로 초기화 후 0 반환
-* @param short col		: 설정할 열 정보, 범위: 1 ~ 19, 인자가 잘못되면 0으로 초기화 후 0 반환
-* @return int			: 설정이 잘 이루어졌으면 1, 그렇지 않으면 0을 반환
+* @param char row		: 설정할 행 정보, 범위: 'A' ~ 'Z', 인자가 잘못되면 '\\0'으로 초기화
+* @param short col		: 설정할 열 정보, 범위: 1 ~ 19, 인자가 잘못되면 0으로 초기화
 *
 * @author lja3723
 * @date 2020-11-25 01:10
 * @version 0.0.1
 */
-int set_OmokCoord(OmokCoord* obj, char row, short col);
-
-/**
-* @brief OmokCoord 유효성 검사
-* @param OmokCoord* obj	: 유효성 검사할 객체의 주소값
-* @return OmokCoord		: 생성된 객체 반환
-*
-* @author lja3723
-* @date 2020-11-25 12:10
-* @version 0.0.1
-*/
-int valid_OmokCoord(OmokCoord* obj);
+void set_OmokCoord(OmokCoord* obj, char row, short col);
 
 /**
 * @brief 문자열을 OmokCoord로 변환
-* @param const char* str	: 형식은 "a19" 또는 "A19" 이어야 함. 인자가 잘못되면 row는 '\\0', col은 0으로 초기화
+* @param const char* str	: 형식은 "a19" 또는 "A19"이어야 하며, 인자가 잘못되면 row는 '\\0', col은 0으로 초기화
 * @return OmokCoord			: 생성된 객체 반환
 *
 * @author lja3723
@@ -141,40 +118,27 @@ OmokCoord Str_to_OmokCoord(const char* str);
 
 
 
-
 /*******************************************************************
 *					StoneType management
-* 
+* 생성(_)
 ********************************************************************/
 
 /**
-* @brief StoneType 유효성 검사
-* @param StoneType* obj		: 유효성 검사할 객체의 주소값
-* @return int				: 객체가 유효하면 1, 그렇지 않으면 0 반환
-*
-* @author lja3723
-* @date 2020-11-25 12:15
-* @version 0.0.1
-*/
-int valid_StoneType(StoneType* obj);
-
-/**
-* @brief 문자열을 StoneType으로 변환
-* @param const char* str	: 변환할 문자열 ("w", "b", "W", "B", "white", "black", "White", "Black")
+* @brief 문자열로 StoneType 생성
+* @param const char* str	: 생성할 StoneType에 해당하는 문자열("w", "W", "white", "White", "b", "B", "black", "Black")
 * @return StoneType			: Black 또는 White 반환, 변환 오류시 ERR_ST 반환
 *
 * @author lja3723
 * @date 2020-11-25 01:25
 * @version 0.0.1
 */
-StoneType Str_to_StoneType(const char* str);
-
+StoneType _StoneType(const char* str);
 
 
 
 /*******************************************************************
 *					OmokCursor management
-* 
+* 생성(_) 설정(set) 변환(Stone|_to_)
 ********************************************************************/
 
 
@@ -184,7 +148,7 @@ StoneType Str_to_StoneType(const char* str);
 
 /*******************************************************************
 *					Stone management
-* 
+*  생성(_) 설정(set) 변환(OmokCursor|_to_)
 ********************************************************************/
 
 
@@ -194,7 +158,7 @@ StoneType Str_to_StoneType(const char* str);
 
 /*******************************************************************
 *					StoneNode management
-* 
+* 생성(_) 설정(set)
 ********************************************************************/
 
 
@@ -204,7 +168,8 @@ StoneType Str_to_StoneType(const char* str);
 
 /*******************************************************************
 *					StoneStorage management
-* 
+* 생성(_) 설정(set)
+* 복사(copy) 제거(delete)
 ********************************************************************/
 
 
@@ -214,7 +179,7 @@ StoneType Str_to_StoneType(const char* str);
 
 /*******************************************************************
 *					OmokPanelType management
-* 
+* 생성(_)
 ********************************************************************/
 
 
@@ -224,7 +189,8 @@ StoneType Str_to_StoneType(const char* str);
 
 /*******************************************************************
 *					OmokPanel management
-* 
+* 생성(_) 설정(set)
+* 복사(copy) 제거(delete)
 ********************************************************************/
 
 
@@ -234,7 +200,7 @@ StoneType Str_to_StoneType(const char* str);
 
 /*******************************************************************
 *					OmokStatus management
-* 
+* 생성(_) 설정(set)
 ********************************************************************/
 
 
@@ -245,7 +211,8 @@ StoneType Str_to_StoneType(const char* str);
 
 /*******************************************************************
 *					Omok management
-* 
+* 생성(_) 설정(set)
+* 복사(copy) 제거(delete)
 ********************************************************************/
 
 

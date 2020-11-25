@@ -36,6 +36,9 @@
     <ClCompile Include="omokobj_conio.c">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="omokobj_judge.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="omok.h">
@@ -54,6 +57,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="omokobj_conio.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="omokobj_judge.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
