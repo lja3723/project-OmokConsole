@@ -1,4 +1,4 @@
-#ifndef __OMOKOBJ_PRINT_H__
+﻿#ifndef __OMOKOBJ_PRINT_H__
 #define __OMOKOBJ_PRINT_H__
 
 /**

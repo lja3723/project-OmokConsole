@@ -1,4 +1,4 @@
-#ifndef __OMOK_ERR_H__
+﻿#ifndef __OMOK_ERR_H__
 #define __OMOK_ERR_H__
 
 /**

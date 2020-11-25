@@ -1,186 +1,186 @@
-#ifndef __OMOKOBJ_H__
+ï»¿#ifndef __OMOKOBJ_H__
 #define __OMOKOBJ_H__
 
 /**
 * @file omokobj.h
 *
-*	[ÆÄÀÏ °³¿ä]
-* ¿À¸ñ ÇÁ·Î±×·¥¿¡¼­ »ç¿ëµÇ´Â ¸ğµç °´Ã¼(±¸Á¶Ã¼)¸¦ Á¤ÀÇÇÔ
+*	[íŒŒì¼ ê°œìš”]
+* ì˜¤ëª© í”„ë¡œê·¸ë¨ì—ì„œ ì‚¬ìš©ë˜ëŠ” ëª¨ë“  ê°ì²´(êµ¬ì¡°ì²´)ë¥¼ ì •ì˜í•¨
 * 
-*	[°´Ã¼ Á¾·ù]
-*	¼³¸í					ÀÌ¸§			  ¸â¹ö ¼³¸í
-* ÁÂÇ¥Á¤º¸ °´Ã¼		: OmokCoord		Çà°ú ¿­ Á¤º¸
-* ¿À¸ñ¾Ë Å¸ÀÔ ¿­°ÅÇü	: StoneType		¿À¸ñ¾Ë Á¾·ù
-* Ä¿¼­ °´Ã¼			: OmokCursor	¿À¸ñ¾Ë Á¤º¸, ÁÂÇ¥Á¤º¸
-* ¿À¸ñ¾Ë °´Ã¼		: Stone			¿À¸ñ¾Ë Á¤º¸, ÁÂÇ¥Á¤º¸
-* ¿À¸ñ¾Ë ³ëµå		: StoneNode		¿À¸ñ¾Ë ÀúÀå °´Ã¼ÀÇ ±¸¼º °´Ã¼
-* ¿À¸ñ¾Ë ÀúÀå °´Ã¼	: StoneStorage	¿¬°á ¸®½ºÆ® »ç¿ëÇÑ ±¸Çö 
-* ¿À¸ñÆÇ Å¸ÀÔ ¿­°ÅÇü	: OmokPanelType	¿À¸ñÆÇ Á¾·ù
-* ¿À¸ñÆÇ °´Ã¼		: OmokPanel		¿À¸ñÆÇ Å©±â, ¿À¸ñ¾Ë ÀúÀå °´Ã¼
-* °ÔÀÓ ÁøÇà ÇöÈ² °´Ã¼	: OmokStatus	Âø¼ö Â÷·Ê, Âø¼ö È¸¼ö, Âø¼ö ÁÂÇ¥Á¤º¸
-* ÅëÇÕ °´Ã¼			: Omok			Ä¿¼­, ¿À¸ñÆÇ, °ÔÀÓ ÁøÇà ÇöÈ² °´Ã¼
+*	[ê°ì²´ ì¢…ë¥˜]
+*	ì„¤ëª…					ì´ë¦„			  ë©¤ë²„ ì„¤ëª…
+* ì¢Œí‘œì •ë³´ ê°ì²´		: OmokCoord		í–‰ê³¼ ì—´ ì •ë³´
+* ì˜¤ëª©ì•Œ íƒ€ì… ì—´ê±°í˜•	: StoneType		ì˜¤ëª©ì•Œ ì¢…ë¥˜
+* ì»¤ì„œ ê°ì²´			: OmokCursor	ì˜¤ëª©ì•Œ ì •ë³´, ì¢Œí‘œì •ë³´
+* ì˜¤ëª©ì•Œ ê°ì²´		: Stone			ì˜¤ëª©ì•Œ ì •ë³´, ì¢Œí‘œì •ë³´
+* ì˜¤ëª©ì•Œ ë…¸ë“œ		: StoneNode		ì˜¤ëª©ì•Œ ì €ì¥ ê°ì²´ì˜ êµ¬ì„± ê°ì²´
+* ì˜¤ëª©ì•Œ ì €ì¥ ê°ì²´	: StoneStorage	ì—°ê²° ë¦¬ìŠ¤íŠ¸ ì‚¬ìš©í•œ êµ¬í˜„ 
+* ì˜¤ëª©íŒ íƒ€ì… ì—´ê±°í˜•	: OmokPanelType	ì˜¤ëª©íŒ ì¢…ë¥˜
+* ì˜¤ëª©íŒ ê°ì²´		: OmokPanel		ì˜¤ëª©íŒ í¬ê¸°, ì˜¤ëª©ì•Œ ì €ì¥ ê°ì²´
+* ê²Œì„ ì§„í–‰ í˜„í™© ê°ì²´	: OmokStatus	ì°©ìˆ˜ ì°¨ë¡€, ì°©ìˆ˜ íšŒìˆ˜, ì°©ìˆ˜ ì¢Œí‘œì •ë³´
+* í†µí•© ê°ì²´			: Omok			ì»¤ì„œ, ì˜¤ëª©íŒ, ê²Œì„ ì§„í–‰ í˜„í™© ê°ì²´
 */
 
 
 
-/*************************** º»¹® ******************************/
+/*************************** ë³¸ë¬¸ ******************************/
 
 
 
 /**
-* @brief	ÁÂÇ¥Á¤º¸ °´Ã¼
-* @details	¿À¸ñÆÇ ³» ÁÂÇ¥: Çà°ú ¿­ Á¤º¸¸¦ Ç¥Çö
+* @brief	ì¢Œí‘œì •ë³´ ê°ì²´
+* @details	ì˜¤ëª©íŒ ë‚´ ì¢Œí‘œ: í–‰ê³¼ ì—´ ì •ë³´ë¥¼ í‘œí˜„
 * 
 * @author	lja3723
 * @date		2020-11-24	18:00
 * @version	0.0.1 
 */
 typedef struct _OMOKCOORD {
-	char row;	/* Çà Á¤º¸ */
-	short col;	/* ¿­ Á¤º¸ */
+	char row;	/* í–‰ ì •ë³´ */
+	short col;	/* ì—´ ì •ë³´ */
 } OmokCoord;
 
 
 
 /**
-* @brief	¿À¸ñ¾Ë Å¸ÀÔ ¿­°ÅÇü
-* @details	¿À¸ñ¾Ë Å¸ÀÔ(Black, White)À» Ç¥Çö
+* @brief	ì˜¤ëª©ì•Œ íƒ€ì… ì—´ê±°í˜•
+* @details	ì˜¤ëª©ì•Œ íƒ€ì…(Black, White)ì„ í‘œí˜„
 *
 * @author	lja3723
 * @date		2020-11-24	18:05
 * @version	0.0.1
 */
 typedef enum _STONETYPE {
-	Black = 0,		/* Èæ»ö ¿À¸ñ¾Ë */
-	White = 1,		/* ¹é»ö ¿À¸ñ¾Ë */
-	ERR_ST = -1		/* ¿¡·¯ ¹ß»ı */
+	Black = 0,		/* í‘ìƒ‰ ì˜¤ëª©ì•Œ */
+	White = 1,		/* ë°±ìƒ‰ ì˜¤ëª©ì•Œ */
+	ERR_ST = -1		/* ì—ëŸ¬ ë°œìƒ */
 } StoneType;
 
 
 
 /**
-* @brief	Ä¿¼­ °´Ã¼
-* @details	Ä¿¼­ÀÇ À§Ä¡(OmokCoord)¿Í ¿À¸ñ¾Ë Á¤º¸(StoneType)¸¦ Ç¥Çö
+* @brief	ì»¤ì„œ ê°ì²´
+* @details	ì»¤ì„œì˜ ìœ„ì¹˜(OmokCoord)ì™€ ì˜¤ëª©ì•Œ ì •ë³´(StoneType)ë¥¼ í‘œí˜„
 *
 * @author	lja3723
 * @date		2020-11-24	18:10
 * @version	0.0.1
 */
 typedef struct _OMOKCURSOR {
-	OmokCoord locate;	/* Ä¿¼­ÀÇ À§Ä¡ */
-	StoneType type;		/* Ä¿¼­°¡ Ç¥ÇöÇÏ´Â ¿À¸ñ¾Ë Å¸ÀÔ(Black, White) */
+	OmokCoord locate;	/* ì»¤ì„œì˜ ìœ„ì¹˜ */
+	StoneType type;		/* ì»¤ì„œê°€ í‘œí˜„í•˜ëŠ” ì˜¤ëª©ì•Œ íƒ€ì…(Black, White) */
 } OmokCursor;
 
 
 
 /**
-* @brief	¿À¸ñ¾Ë °´Ã¼
-* @details	¿À¸ñ¾ËÀÇ À§Ä¡(OmokCoord)¿Í ¿À¸ñ¾Ë Á¤º¸(StoneType)¸¦ Ç¥Çö
+* @brief	ì˜¤ëª©ì•Œ ê°ì²´
+* @details	ì˜¤ëª©ì•Œì˜ ìœ„ì¹˜(OmokCoord)ì™€ ì˜¤ëª©ì•Œ ì •ë³´(StoneType)ë¥¼ í‘œí˜„
 *
 * @author	lja3723
 * @date		2020-11-24	18:10
 * @version	0.0.1
 */
 typedef struct _STONE {
-	OmokCoord locate;	/* ¿À¸ñ¾ËÀÇ À§Ä¡ */
-	StoneType type;		/* ¿À¸ñ¾Ë Å¸ÀÔ(Black, White) */
+	OmokCoord locate;	/* ì˜¤ëª©ì•Œì˜ ìœ„ì¹˜ */
+	StoneType type;		/* ì˜¤ëª©ì•Œ íƒ€ì…(Black, White) */
 } Stone;
 
 
 
 /**
-* @brief	¿À¸ñ¾Ë ³ëµå
-* @details	¿À¸ñ¾Ë °´Ã¼¸¦ ÀúÀåÇÏ´Â ³ëµå ±¸Çö
+* @brief	ì˜¤ëª©ì•Œ ë…¸ë“œ
+* @details	ì˜¤ëª©ì•Œ ê°ì²´ë¥¼ ì €ì¥í•˜ëŠ” ë…¸ë“œ êµ¬í˜„
 *
 * @author	lja3723
 * @date		2020-11-24	21:40
 * @version	0.0.1
 */
 typedef struct _STONENODE {
-	Stone stone;				/* ¿À¸ñ¾Ë Á¤º¸ */
-	struct _STONENODE* next;	/* ´ÙÀ½ ¿À¸ñ¾Ë ³ëµå¸¦ °¡¸®Å°´Â Æ÷ÀÎÅÍ */
+	Stone stone;				/* ì˜¤ëª©ì•Œ ì •ë³´ */
+	struct _STONENODE* next;	/* ë‹¤ìŒ ì˜¤ëª©ì•Œ ë…¸ë“œë¥¼ ê°€ë¦¬í‚¤ëŠ” í¬ì¸í„° */
 } StoneNode;
 
 
 
 /**
-* @brief	¿À¸ñ¾Ë ÀúÀå °´Ã¼
-* @details	¿À¸ñ¾ËÀ» ÀúÀåÇÏ´Â ÀÚ·á±¸Á¶¸¦ Á¤ÀÇÇÏ´Â °´Ã¼
-*			¿¬°á ¸®½ºÆ®·Î ±¸Çö
+* @brief	ì˜¤ëª©ì•Œ ì €ì¥ ê°ì²´
+* @details	ì˜¤ëª©ì•Œì„ ì €ì¥í•˜ëŠ” ìë£Œêµ¬ì¡°ë¥¼ ì •ì˜í•˜ëŠ” ê°ì²´
+*			ì—°ê²° ë¦¬ìŠ¤íŠ¸ë¡œ êµ¬í˜„
 *
 * @author	lja3723
 * @date		2020-11-24	21:40
 * @version	0.0.1
 */
 typedef struct _STONESTORAGE {
-	StoneNode** header;	/* µ¿ÀûÇÒ´çÀ¸·Î ±¸ÇöµÈ StoneNode Æ÷ÀÎÅÍ ¹è¿­: Çà Ç¥Çö */
-	int size;			/* Æ÷ÀÎÅÍ ¹è¿­ÀÇ Å©±â */
+	StoneNode** header;	/* ë™ì í• ë‹¹ìœ¼ë¡œ êµ¬í˜„ëœ StoneNode í¬ì¸í„° ë°°ì—´: í–‰ í‘œí˜„ */
+	int size;			/* í¬ì¸í„° ë°°ì—´ì˜ í¬ê¸° */
 } StoneStorage;
 
 
 
 /**
-* @brief	¿À¸ñÆÇ Å¸ÀÔ ¿­°ÅÇü
-* @details	¿À¸ñÆÇ Å¸ÀÔ(regular, jumbo)À» Ç¥Çö
+* @brief	ì˜¤ëª©íŒ íƒ€ì… ì—´ê±°í˜•
+* @details	ì˜¤ëª©íŒ íƒ€ì…(regular, jumbo)ì„ í‘œí˜„
 *
 * @author	lja3723
 * @date		2020-11-24	20:20
 * @version	0.0.1
 */
 typedef enum _OMOKPANELTYPE {
-	regular	= 15,	/* ·¹±Ö·¯(15*15) ¿À¸ñÆÇ */
-	jumbo	= 19,	/* Á¡º¸(19*19) ¿À¸ñÆÇ */
-	ERR_OPT	= -1	/* ¿¡·¯ ¹ß»ı */
+	regular	= 15,	/* ë ˆê·¤ëŸ¬(15*15) ì˜¤ëª©íŒ */
+	jumbo	= 19,	/* ì ë³´(19*19) ì˜¤ëª©íŒ */
+	ERR_OPT	= -1	/* ì—ëŸ¬ ë°œìƒ */
 } OmokPanelType;
 
 
 
 /**
-* @brief	¿À¸ñÆÇ °´Ã¼
-* @details	¿À¸ñÆÇ Å¸ÀÔ, ¿À¸ñ¾Ë ÀúÀå °´Ã¼¸¦ Ç¥Çö
+* @brief	ì˜¤ëª©íŒ ê°ì²´
+* @details	ì˜¤ëª©íŒ íƒ€ì…, ì˜¤ëª©ì•Œ ì €ì¥ ê°ì²´ë¥¼ í‘œí˜„
 *
 * @author	lja3723
 * @date		2020-11-24	20:10
 * @version	0.0.1
 */
 typedef struct _OMOKPANEL {
-	OmokPanelType type;		/* ¿À¸ñÆÇ Å¸ÀÔ(regular, jumbo) */
-	StoneStorage storage;	/* ¿À¸ñ¾Ë ÀúÀå °´Ã¼ */
+	OmokPanelType type;		/* ì˜¤ëª©íŒ íƒ€ì…(regular, jumbo) */
+	StoneStorage storage;	/* ì˜¤ëª©ì•Œ ì €ì¥ ê°ì²´ */
 } OmokPanel;
 
 
 
 /**
-* @brief	°ÔÀÓ ÁøÇà ÇöÈ² °´Ã¼
-* @details	Âø¼ö Â÷·Ê(¿À¸ñ¾Ë Á¤º¸ °´Ã¼), Âø¼ö È½¼ö, Âø¼ö ÁÂÇ¥Á¤º¸¸¦ Ç¥Çö
+* @brief	ê²Œì„ ì§„í–‰ í˜„í™© ê°ì²´
+* @details	ì°©ìˆ˜ ì°¨ë¡€(ì˜¤ëª©ì•Œ ì •ë³´ ê°ì²´), ì°©ìˆ˜ íšŸìˆ˜, ì°©ìˆ˜ ì¢Œí‘œì •ë³´ë¥¼ í‘œí˜„
 *
 * @author	lja3723
 * @date		2020-11-24	20:30
 * @version	0.0.1
 */
 typedef struct _OMOKSTATUS {
-	StoneType who_is_turn;		/* Âø¼ö Â÷·Ê(Black, White) */
-	int	turns;					/* Âø¼ö È½¼ö */
-	OmokCoord prev_put_locate;	/* ¹Ù·Î Àü Âø¼öÇÑ ÁÂÇ¥ Á¤º¸ */
+	StoneType who_is_turn;		/* ì°©ìˆ˜ ì°¨ë¡€(Black, White) */
+	int	turns;					/* ì°©ìˆ˜ íšŸìˆ˜ */
+	OmokCoord prev_put_locate;	/* ë°”ë¡œ ì „ ì°©ìˆ˜í•œ ì¢Œí‘œ ì •ë³´ */
 } OmokStatus;
 
 
 
 /**
-* @brief	ÅëÇÕ ¿À¸ñ °´Ã¼
-* @details	Ä¿¼­, ¿À¸ñÆÇ, °ÔÀÓ ÁøÇà ÇöÈ² °´Ã¼ µîÀ» Á¾ÇÕÇÔ
+* @brief	í†µí•© ì˜¤ëª© ê°ì²´
+* @details	ì»¤ì„œ, ì˜¤ëª©íŒ, ê²Œì„ ì§„í–‰ í˜„í™© ê°ì²´ ë“±ì„ ì¢…í•©í•¨
 *
 * @author	lja3723
 * @date		2020-11-24	20:40
 * @version	0.0.1
 */
 typedef struct _OMOK {
-	OmokCursor cursor;	/* ¿À¸ñÆÇ Ä¿¼­ */
-	OmokPanel panel;	/* ¿À¸ñÆÇ */
-	OmokStatus status;	/* °ÔÀÓ ÁøÇà ÇöÈ² */
+	OmokCursor cursor;	/* ì˜¤ëª©íŒ ì»¤ì„œ */
+	OmokPanel panel;	/* ì˜¤ëª©íŒ */
+	OmokStatus status;	/* ê²Œì„ ì§„í–‰ í˜„í™© */
 } Omok;
 
 
 
-/*************************** /º»¹® ******************************/
+/*************************** /ë³¸ë¬¸ ******************************/
 #endif

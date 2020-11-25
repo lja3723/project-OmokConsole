@@ -1,4 +1,4 @@
-#ifndef __OMOK_ALGORITHM_H__
+ï»¿#ifndef __OMOK_ALGORITHM_H__
 #define __OMOK_ALGORITHM_H__
 
 /**
@@ -9,7 +9,7 @@
 #include "omokobj_manage.h"
 #include "omokobj_conio.h"
 
-// check_win_row : °¡·Î·Î 5°³ÀÇ µ¹ÀÌ ³õ¿©ÀÖ´ÂÁö È®ÀÎÇÏ´Â ÇÔ¼ö
+// check_win_row : ê°€ë¡œë¡œ 5ê°œì˜ ëŒì´ ë†“ì—¬ìˆëŠ”ì§€ í™•ì¸í•˜ëŠ” í•¨ìˆ˜
 int check_win_row(OmokCoord* l, OmokPanel* o);
 
 #endif

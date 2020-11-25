@@ -1,4 +1,4 @@
-#include "omok.h"
+﻿#include "omok.h"
 
 /**
 * @file omok.c
