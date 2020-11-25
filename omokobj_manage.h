@@ -1,4 +1,4 @@
-#ifndef __OMOKOBJ_MANAGE_H__
+ï»¿#ifndef __OMOKOBJ_MANAGE_H__
 #define __OMOKOBJ_MANAGE_H__
 
 #include "omokobj.h"
@@ -6,97 +6,97 @@
 /**
 * @file omokobj_manage.h
 * 
-*	[ÆÄÀÏ °³¿ä]
-* ¿À¸ñ ÇÁ·Î±×·¥ °´Ã¼¸¦ °ü¸®(¼³Á¤, »ý¼º, Á¦°Å µî)ÇÏ´Â ÇÔ¼ö¸¦ Á¤ÀÇÇÔ
+*	[íŒŒì¼ ê°œìš”]
+* ì˜¤ëª© í”„ë¡œê·¸ëž¨ ê°ì²´ë¥¼ ê´€ë¦¬(ì„¤ì •, ìƒì„±, ì œê±° ë“±)í•˜ëŠ” í•¨ìˆ˜ë¥¼ ì •ì˜í•¨
 * 
-*	[ÇÔ¼ö Á¾·ù]
-* »ý¼º		_°´Ã¼()
-* ¼³Á¤		set_°´Ã¼()
-* À¯È¿¼º		valid_°´Ã¼()
-* º¯È¯		º¯È¯ÇÒ°´Ã¼_to_º¯È¯µÉ°´Ã¼()
-* º¹»ç		copy_°´Ã¼()
-* Á¦°Å		delete_°´Ã¼()
+*	[í•¨ìˆ˜ ì¢…ë¥˜]
+* ìƒì„±		_ê°ì²´()
+* ì„¤ì •		set_ê°ì²´()
+* ìœ íš¨ì„±		valid_ê°ì²´()
+* ë³€í™˜		ë³€í™˜í• ê°ì²´_to_ë³€í™˜ë ê°ì²´()
+* ë³µì‚¬		copy_ê°ì²´()
+* ì œê±°		delete_ê°ì²´()
 */
 
 /*
-* [°´Ã¼ »ý¼º(_) ÇÔ¼ö]
-* °´Ã¼ »ý¼º °è¿­ ÇÔ¼ö´Â °´Ã¼ ¸â¹ö º¯¼ö¿Í ÀÏ´ëÀÏ ´ëÀÀ µÇ´Â ÁÖ¾îÁø ÀÎÀÚ¸¦ ÅëÇØ °´Ã¼¸¦ »ý¼ºÇØ ¹ÝÈ¯ÇÏ´Â ¿ªÇÒÀ» ´ã´çÇÔ
-* 'µ¿Àû ÇÒ´çÀÌ ÇÊ¿äÇÑ ¸â¹ö'°¡ ÀÖ´Â °´Ã¼´Â ¹Ýµå½Ã °´Ã¼ »ç¿ë ÈÄ ÇØ´ç °´Ã¼ÀÇ delete ÇÔ¼ö¸¦ È£ÃâÇØ¾ß ÇÔ
+* [ê°ì²´ ìƒì„±(_) í•¨ìˆ˜]
+* ê°ì²´ ìƒì„± ê³„ì—´ í•¨ìˆ˜ëŠ” ê°ì²´ ë©¤ë²„ ë³€ìˆ˜ì™€ ì¼ëŒ€ì¼ ëŒ€ì‘ ë˜ëŠ” ì£¼ì–´ì§„ ì¸ìžë¥¼ í†µí•´ ê°ì²´ë¥¼ ìƒì„±í•´ ë°˜í™˜í•˜ëŠ” ì—­í• ì„ ë‹´ë‹¹í•¨
+* 'ë™ì  í• ë‹¹ì´ í•„ìš”í•œ ë©¤ë²„'ê°€ ìžˆëŠ” ê°ì²´ëŠ” ë°˜ë“œì‹œ ê°ì²´ ì‚¬ìš© í›„ í•´ë‹¹ ê°ì²´ì˜ delete í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•´ì•¼ í•¨
 *
-* ÀÌ¸§				: _°´Ã¼()
-* ¸Å°³º¯¼ö			: ¼³Á¤°ª(¸â¹ö º¯¼ö¿Í ÀÏ´ëÀÏ ´ëÀÀ)
-* ¹ÝÈ¯°ª				: »ý¼ºµÈ °´Ã¼ ¹ÝÈ¯
+* ì´ë¦„				: _ê°ì²´()
+* ë§¤ê°œë³€ìˆ˜			: ì„¤ì •ê°’(ë©¤ë²„ ë³€ìˆ˜ì™€ ì¼ëŒ€ì¼ ëŒ€ì‘)
+* ë°˜í™˜ê°’				: ìƒì„±ëœ ê°ì²´ ë°˜í™˜
 */
 
 /*
-* [°´Ã¼ ¼³Á¤(set) ÇÔ¼ö]
-* °´Ã¼ ¼³Á¤ °è¿­ ÇÔ¼ö´Â °´Ã¼¸¦ ÁÖ¾îÁø ÀÎÀÚ·Î ¼³Á¤ÇÏ´Â ¿ªÇÒÀ» ´ã´çÇÔ
-* 'µ¿Àû ÇÒ´çÀÌ ÇÊ¿äÇÑ ¸â¹ö'°¡ ÀÖ´Â °´Ã¼´Â ¹Ýµå½Ã °´Ã¼ »ç¿ë ÈÄ delete ÇÔ¼ö¸¦ È£ÃâÇØ¾ß ÇÔ
+* [ê°ì²´ ì„¤ì •(set) í•¨ìˆ˜]
+* ê°ì²´ ì„¤ì • ê³„ì—´ í•¨ìˆ˜ëŠ” ê°ì²´ë¥¼ ì£¼ì–´ì§„ ì¸ìžë¡œ ì„¤ì •í•˜ëŠ” ì—­í• ì„ ë‹´ë‹¹í•¨
+* 'ë™ì  í• ë‹¹ì´ í•„ìš”í•œ ë©¤ë²„'ê°€ ìžˆëŠ” ê°ì²´ëŠ” ë°˜ë“œì‹œ ê°ì²´ ì‚¬ìš© í›„ delete í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•´ì•¼ í•¨
 * 
-* ÀÌ¸§				: set_°´Ã¼()
-* Ã¹ ¸Å°³º¯¼ö		: ¼³Á¤ÇÒ °´Ã¼ÀÇ ÁÖ¼Ò°ª
-* ±× ¿Ü ¸Å°³º¯¼ö		: ¼³Á¤°ª(¸â¹ö º¯¼ö¿Í ÀÏ´ëÀÏ ´ëÀÀ)
-* ¹ÝÈ¯°ª				: ¼³Á¤ÀÌ Àß ÀÌ·ç¾îÁ³À¸¸é 1, ±×·¸Áö ¾ÊÀ¸¸é 0À» ¹ÝÈ¯
+* ì´ë¦„				: set_ê°ì²´()
+* ì²« ë§¤ê°œë³€ìˆ˜		: ì„¤ì •í•  ê°ì²´ì˜ ì£¼ì†Œê°’
+* ê·¸ ì™¸ ë§¤ê°œë³€ìˆ˜		: ì„¤ì •ê°’(ë©¤ë²„ ë³€ìˆ˜ì™€ ì¼ëŒ€ì¼ ëŒ€ì‘)
+* ë°˜í™˜ê°’				: ì„¤ì •ì´ ìž˜ ì´ë£¨ì–´ì¡Œìœ¼ë©´ 1, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì„ ë°˜í™˜
 */ 
 
 /**
-* [°´Ã¼ À¯È¿¼º(valid) ÇÔ¼ö]
-* °´Ã¼ À¯È¿¼º °Ë»ç °è¿­ ÇÔ¼ö´Â °´Ã¼°¡ À¯È¿ÇÑ °ªÀ¸·Î ÃÊ±âÈ­µÆ´ÂÁö
-* °Ë»çÇÏ°Å³ª 'µ¿Àû ÇÒ´çÀÌ ÇÊ¿äÇÑ ¸â¹ö'°¡ ÀÖ´Â °´Ã¼°¡ 
-* À¯È¿ÇÑ µ¿Àû ÇÒ´çÀÌ µÇ¾î ÀÖ´ÂÁö °Ë»çÇÏ´Â ¿ªÇÒÀ» ´ã´çÇÔ
+* [ê°ì²´ ìœ íš¨ì„±(valid) í•¨ìˆ˜]
+* ê°ì²´ ìœ íš¨ì„± ê²€ì‚¬ ê³„ì—´ í•¨ìˆ˜ëŠ” ê°ì²´ê°€ ìœ íš¨í•œ ê°’ìœ¼ë¡œ ì´ˆê¸°í™”ëëŠ”ì§€
+* ê²€ì‚¬í•˜ê±°ë‚˜ 'ë™ì  í• ë‹¹ì´ í•„ìš”í•œ ë©¤ë²„'ê°€ ìžˆëŠ” ê°ì²´ê°€ 
+* ìœ íš¨í•œ ë™ì  í• ë‹¹ì´ ë˜ì–´ ìžˆëŠ”ì§€ ê²€ì‚¬í•˜ëŠ” ì—­í• ì„ ë‹´ë‹¹í•¨
 * 
-* ÀÌ¸§				: valid_°´Ã¼()
-* ¸Å°³º¯¼ö			: À¯È¿¼º °Ë»çÇÒ °´Ã¼ÀÇ ÁÖ¼Ò°ª
-* ¹ÝÈ¯°ª				: °´Ã¼°¡ À¯È¿ÇÏ¸é 1, ±×·¸Áö ¾ÊÀ¸¸é(NULL µî) 0 ¹ÝÈ¯
+* ì´ë¦„				: valid_ê°ì²´()
+* ë§¤ê°œë³€ìˆ˜			: ìœ íš¨ì„± ê²€ì‚¬í•  ê°ì²´ì˜ ì£¼ì†Œê°’
+* ë°˜í™˜ê°’				: ê°ì²´ê°€ ìœ íš¨í•˜ë©´ 1, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´(NULL ë“±) 0 ë°˜í™˜
 */
 
 /*
-* [°´Ã¼ º¯È¯(_to_) ÇÔ¼ö]
-* °´Ã¼ º¯È¯ °è¿­ ÇÔ¼ö´Â º¯È¯ÇÒ°´Ã¼¸¦ º¯È¯µÉ°´Ã¼·Î º¯È¯ÇÏ´Â ¿ªÇÒÀ» ´ã´çÇÔ
-* ÀÌ¶§ °´Ã¼ º¹»ç°¡ ¼öÇàµÇ¸ç º¹»çµÈ °´Ã¼°¡ ¸®ÅÏµÊ
+* [ê°ì²´ ë³€í™˜(_to_) í•¨ìˆ˜]
+* ê°ì²´ ë³€í™˜ ê³„ì—´ í•¨ìˆ˜ëŠ” ë³€í™˜í• ê°ì²´ë¥¼ ë³€í™˜ë ê°ì²´ë¡œ ë³€í™˜í•˜ëŠ” ì—­í• ì„ ë‹´ë‹¹í•¨
+* ì´ë•Œ ê°ì²´ ë³µì‚¬ê°€ ìˆ˜í–‰ë˜ë©° ë³µì‚¬ëœ ê°ì²´ê°€ ë¦¬í„´ë¨
 *
-* ÀÌ¸§				: º¯È¯ÇÒ°´Ã¼_to_º¯È¯µÈ°´Ã¼()
-* Ã¹ ¸Å°³º¯¼ö		: º¯È¯ÇÒ°´Ã¼ÀÇ ÁÖ¼Ò°ª
-* ±× ¿Ü ¸Å°³º¯¼ö		: ¾øÀ½
-* ¹ÝÈ¯°ª				: Áö¿ªº¯¼ö ÇüÅÂÀÇ º¯È¯µÈ°´Ã¼(create ÇÔ¼ö°¡ ÀÖ´Â º¯È¯µÉ°´Ã¼´Â ±íÀº º¹»ç ¼öÇàµÊ)
+* ì´ë¦„				: ë³€í™˜í• ê°ì²´_to_ë³€í™˜ëœê°ì²´()
+* ì²« ë§¤ê°œë³€ìˆ˜		: ë³€í™˜í• ê°ì²´ì˜ ì£¼ì†Œê°’
+* ê·¸ ì™¸ ë§¤ê°œë³€ìˆ˜		: ì—†ìŒ
+* ë°˜í™˜ê°’				: ì§€ì—­ë³€ìˆ˜ í˜•íƒœì˜ ë³€í™˜ëœê°ì²´(create í•¨ìˆ˜ê°€ ìžˆëŠ” ë³€í™˜ë ê°ì²´ëŠ” ê¹Šì€ ë³µì‚¬ ìˆ˜í–‰ë¨)
 */
 
 /*
-* [°´Ã¼ º¹»ç(copy) ÇÔ¼ö]
-* °´Ã¼ º¹»ç °è¿­ ÇÔ¼ö´Â '±íÀº º¹»ç'°¡ ÇÊ¿äÇÑ °´Ã¼¿¡¼­ Á¤ÀÇµÇ¸ç
-* °´Ã¼ÀÇ ³»¿ëÀ» °°Àº Å¸ÀÔÀÇ °´Ã¼¿¡ '±íÀº º¹»ç'ÇÏ´Â ¿ªÇÒÀ» ´ã´çÇÔ
+* [ê°ì²´ ë³µì‚¬(copy) í•¨ìˆ˜]
+* ê°ì²´ ë³µì‚¬ ê³„ì—´ í•¨ìˆ˜ëŠ” 'ê¹Šì€ ë³µì‚¬'ê°€ í•„ìš”í•œ ê°ì²´ì—ì„œ ì •ì˜ë˜ë©°
+* ê°ì²´ì˜ ë‚´ìš©ì„ ê°™ì€ íƒ€ìž…ì˜ ê°ì²´ì— 'ê¹Šì€ ë³µì‚¬'í•˜ëŠ” ì—­í• ì„ ë‹´ë‹¹í•¨
 *
-* ÀÌ¸§				: copy_°´Ã¼()
-* Ã¹ ¸Å°³º¯¼ö		: º¹»çÇÒ °´Ã¼ÀÇ ÁÖ¼Ò°ª
-* ±× ¿Ü ¸Å°³º¯¼ö		: ¾øÀ½
-* ¹ÝÈ¯°ª				: Áö¿ª º¯¼ö ÇüÅÂÀÇ º¹»çµÈ °´Ã¼
+* ì´ë¦„				: copy_ê°ì²´()
+* ì²« ë§¤ê°œë³€ìˆ˜		: ë³µì‚¬í•  ê°ì²´ì˜ ì£¼ì†Œê°’
+* ê·¸ ì™¸ ë§¤ê°œë³€ìˆ˜		: ì—†ìŒ
+* ë°˜í™˜ê°’				: ì§€ì—­ ë³€ìˆ˜ í˜•íƒœì˜ ë³µì‚¬ëœ ê°ì²´
 */
 
 /* 
-* [°´Ã¼ Á¦°Å(delete) ÇÔ¼ö]
-* °´Ã¼ Á¦°Å °è¿­ ÇÔ¼ö´Â 'µ¿Àû ÇÒ´çÀÌ ÇÊ¿äÇÑ ¸â¹ö'°¡ ÀÖ´Â °´Ã¼¿¡¼­ Á¤ÀÇµÇ¸ç
-* °´Ã¼°¡ '°´Ã¼ »ý¼º ¶Ç´Â ¼³Á¤ ÇÔ¼ö'¸¦ ÅëÇØ µ¿Àû ÇÒ´ç µÈ ÈÄ ´õ ÀÌ»ó ÄÚµå¿¡¼­ »ç¿ëÇÏÁö ¾ÊÀ» ¶§ 
-* µ¿Àû ÇÒ´çµÈ ¸Þ¸ð¸®¸¦ ÇØÁ¦ÇÏ´Â ¿ªÇÒÀ» ´ã´çÇÔ
+* [ê°ì²´ ì œê±°(delete) í•¨ìˆ˜]
+* ê°ì²´ ì œê±° ê³„ì—´ í•¨ìˆ˜ëŠ” 'ë™ì  í• ë‹¹ì´ í•„ìš”í•œ ë©¤ë²„'ê°€ ìžˆëŠ” ê°ì²´ì—ì„œ ì •ì˜ë˜ë©°
+* ê°ì²´ê°€ 'ê°ì²´ ìƒì„± ë˜ëŠ” ì„¤ì • í•¨ìˆ˜'ë¥¼ í†µí•´ ë™ì  í• ë‹¹ ëœ í›„ ë” ì´ìƒ ì½”ë“œì—ì„œ ì‚¬ìš©í•˜ì§€ ì•Šì„ ë•Œ 
+* ë™ì  í• ë‹¹ëœ ë©”ëª¨ë¦¬ë¥¼ í•´ì œí•˜ëŠ” ì—­í• ì„ ë‹´ë‹¹í•¨
 * 
-* ÀÌ¸§				: delete_°´Ã¼()
-* Ã¹ ¸Å°³º¯¼ö		: Á¦°ÅÇÒ °´Ã¼ÀÇ ÁÖ¼Ò°ª
-* ±× ¿Ü ¸Å°³º¯¼ö		: ¾øÀ½
-* ¹ÝÈ¯°ª				: °´Ã¼ Á¦°Å°¡ ¼º°øÇÏ¸é 1, ½ÇÆÐÇÏ°Å³ª °´Ã¼ ³»ºÎ µ¿Àû ÇÒ´ç ¸Þ¸ð¸® Æ÷ÀÎÅÍ°¡ NULLÀÎ °æ¿ì 0À» ¹ÝÈ¯
+* ì´ë¦„				: delete_ê°ì²´()
+* ì²« ë§¤ê°œë³€ìˆ˜		: ì œê±°í•  ê°ì²´ì˜ ì£¼ì†Œê°’
+* ê·¸ ì™¸ ë§¤ê°œë³€ìˆ˜		: ì—†ìŒ
+* ë°˜í™˜ê°’				: ê°ì²´ ì œê±°ê°€ ì„±ê³µí•˜ë©´ 1, ì‹¤íŒ¨í•˜ê±°ë‚˜ ê°ì²´ ë‚´ë¶€ ë™ì  í• ë‹¹ ë©”ëª¨ë¦¬ í¬ì¸í„°ê°€ NULLì¸ ê²½ìš° 0ì„ ë°˜í™˜
 */ 
 
-/********************************* º»¹® *************************************/
+/********************************* ë³¸ë¬¸ *************************************/
 
 
 /*****************************************************************
 *					OmokCoord management
-* »ý¼º(_) ¼³Á¤(set) À¯È¿¼º(valid) º¯È¯(_to_, Str)
+* ìƒì„±(_) ì„¤ì •(set) ìœ íš¨ì„±(valid) ë³€í™˜(_to_, Str)
 ******************************************************************/
 
 /**
-* @brief OmokCoord »ý¼º
-* @param char row		: ¼³Á¤ÇÒ Çà Á¤º¸, ¹üÀ§: 'A' ~ 'Z', ÀÎÀÚ°¡ Àß¸øµÇ¸é '\\0'À¸·Î ÃÊ±âÈ­
-* @param short col		: ¼³Á¤ÇÒ ¿­ Á¤º¸, ¹üÀ§: 1 ~ 19, ÀÎÀÚ°¡ Àß¸øµÇ¸é 0À¸·Î ÃÊ±âÈ­
-* @return OmokCoord		: »ý¼ºµÈ °´Ã¼ ¹ÝÈ¯
+* @brief OmokCoord ï¿½ï¿½ï¿½ï¿½
+* @param char row		: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½: 'A' ~ 'Z', ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ß¸ï¿½ï¿½Ç¸ï¿½ '\\0'ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+* @param short col		: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½: 1 ~ 19, ï¿½ï¿½ï¿½Ú°ï¿½ ï¿½ß¸ï¿½ï¿½Ç¸ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
+* @return OmokCoord		: ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ã¼ ï¿½ï¿½È¯
 *
 * @author lja3723
 * @date 2020-11-25 12:10
@@ -105,11 +105,11 @@
 OmokCoord _OmokCoord(char row, short col);
 
 /**
-* @brief OmokCoord ¼³Á¤
-* @param OmokCoord* obj	: ¼³Á¤ÇÒ °´Ã¼ÀÇ ÁÖ¼Ò°ª
-* @param char row		: ¼³Á¤ÇÒ Çà Á¤º¸, ¹üÀ§: 'A' ~ 'Z', ÀÎÀÚ°¡ Àß¸øµÇ¸é '\\0'À¸·Î ÃÊ±âÈ­ ÈÄ 0 ¹ÝÈ¯
-* @param short col		: ¼³Á¤ÇÒ ¿­ Á¤º¸, ¹üÀ§: 1 ~ 19, ÀÎÀÚ°¡ Àß¸øµÇ¸é 0À¸·Î ÃÊ±âÈ­ ÈÄ 0 ¹ÝÈ¯
-* @return int			: ¼³Á¤ÀÌ Àß ÀÌ·ç¾îÁ³À¸¸é 1, ±×·¸Áö ¾ÊÀ¸¸é 0À» ¹ÝÈ¯
+* @brief OmokCoord ì„¤ì •
+* @param OmokCoord* obj	: ì„¤ì •í•  ê°ì²´ì˜ ì£¼ì†Œê°’
+* @param char row		: ì„¤ì •í•  í–‰ ì •ë³´, ë²”ìœ„: 'A' ~ 'Z', ì¸ìžê°€ ìž˜ëª»ë˜ë©´ '\\0'ìœ¼ë¡œ ì´ˆê¸°í™” í›„ 0 ë°˜í™˜
+* @param short col		: ì„¤ì •í•  ì—´ ì •ë³´, ë²”ìœ„: 1 ~ 19, ì¸ìžê°€ ìž˜ëª»ë˜ë©´ 0ìœ¼ë¡œ ì´ˆê¸°í™” í›„ 0 ë°˜í™˜
+* @return int			: ì„¤ì •ì´ ìž˜ ì´ë£¨ì–´ì¡Œìœ¼ë©´ 1, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0ì„ ë°˜í™˜
 *
 * @author lja3723
 * @date 2020-11-25 01:10
@@ -118,9 +118,9 @@ OmokCoord _OmokCoord(char row, short col);
 int set_OmokCoord(OmokCoord* obj, char row, short col);
 
 /**
-* @brief OmokCoord À¯È¿¼º °Ë»ç
-* @param OmokCoord* obj	: À¯È¿¼º °Ë»çÇÒ °´Ã¼ÀÇ ÁÖ¼Ò°ª
-* @return OmokCoord		: »ý¼ºµÈ °´Ã¼ ¹ÝÈ¯
+* @brief OmokCoord ìœ íš¨ì„± ê²€ì‚¬
+* @param OmokCoord* obj	: ìœ íš¨ì„± ê²€ì‚¬í•  ê°ì²´ì˜ ì£¼ì†Œê°’
+* @return OmokCoord		: ìƒì„±ëœ ê°ì²´ ë°˜í™˜
 *
 * @author lja3723
 * @date 2020-11-25 12:10
@@ -129,9 +129,9 @@ int set_OmokCoord(OmokCoord* obj, char row, short col);
 int valid_OmokCoord(OmokCoord* obj);
 
 /**
-* @brief ¹®ÀÚ¿­À» OmokCoord·Î º¯È¯
-* @param const char* str	: Çü½ÄÀº "a19" ¶Ç´Â "A19" ÀÌ¾î¾ß ÇÔ. ÀÎÀÚ°¡ Àß¸øµÇ¸é row´Â '\\0', colÀº 0À¸·Î ÃÊ±âÈ­
-* @return OmokCoord			: »ý¼ºµÈ °´Ã¼ ¹ÝÈ¯
+* @brief ë¬¸ìžì—´ì„ OmokCoordë¡œ ë³€í™˜
+* @param const char* str	: í˜•ì‹ì€ "a19" ë˜ëŠ” "A19" ì´ì–´ì•¼ í•¨. ì¸ìžê°€ ìž˜ëª»ë˜ë©´ rowëŠ” '\\0', colì€ 0ìœ¼ë¡œ ì´ˆê¸°í™”
+* @return OmokCoord			: ìƒì„±ëœ ê°ì²´ ë°˜í™˜
 *
 * @author lja3723
 * @date 2020-11-25 12:20
@@ -148,9 +148,9 @@ OmokCoord Str_to_OmokCoord(const char* str);
 ********************************************************************/
 
 /**
-* @brief StoneType À¯È¿¼º °Ë»ç
-* @param StoneType* obj		: À¯È¿¼º °Ë»çÇÒ °´Ã¼ÀÇ ÁÖ¼Ò°ª
-* @return int				: °´Ã¼°¡ À¯È¿ÇÏ¸é 1, ±×·¸Áö ¾ÊÀ¸¸é 0 ¹ÝÈ¯
+* @brief StoneType ìœ íš¨ì„± ê²€ì‚¬
+* @param StoneType* obj		: ìœ íš¨ì„± ê²€ì‚¬í•  ê°ì²´ì˜ ì£¼ì†Œê°’
+* @return int				: ê°ì²´ê°€ ìœ íš¨í•˜ë©´ 1, ê·¸ë ‡ì§€ ì•Šìœ¼ë©´ 0 ë°˜í™˜
 *
 * @author lja3723
 * @date 2020-11-25 12:15
@@ -159,15 +159,16 @@ OmokCoord Str_to_OmokCoord(const char* str);
 int valid_StoneType(StoneType* obj);
 
 /**
-* @brief ¹®ÀÚ¿­À» StoneTypeÀ¸·Î º¯È¯
-* @param const char* str	: º¯È¯ÇÒ ¹®ÀÚ¿­ ("w", "b", "W", "B", "white", "black", "White", "Black")
-* @return StoneType			: Black ¶Ç´Â White ¹ÝÈ¯, º¯È¯ ¿À·ù½Ã ERR_ST ¹ÝÈ¯
+* @brief ë¬¸ìžì—´ì„ StoneTypeìœ¼ë¡œ ë³€í™˜
+* @param const char* str	: ë³€í™˜í•  ë¬¸ìžì—´ ("w", "b", "W", "B", "white", "black", "White", "Black")
+* @return StoneType			: Black ë˜ëŠ” White ë°˜í™˜, ë³€í™˜ ì˜¤ë¥˜ì‹œ ERR_ST ë°˜í™˜
 *
 * @author lja3723
 * @date 2020-11-25 01:25
 * @version 0.0.1
 */
 StoneType Str_to_StoneType(const char* str);
+
 
 
 
@@ -252,5 +253,5 @@ StoneType Str_to_StoneType(const char* str);
 
 
 
-/********************************* /º»¹® *************************************/
+/********************************* /ë³¸ë¬¸ *************************************/
 #endif
