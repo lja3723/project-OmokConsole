@@ -51,8 +51,9 @@ typedef struct _OMOKCOORD {
 * @version	0.0.1
 */
 typedef enum _STONETYPE {
-	Black = 0,	/* 흑색 오목알 */
-	White = 1	/* 백색 오목알 */
+	Black = 0,		/* 흑색 오목알 */
+	White = 1,		/* 백색 오목알 */
+	ERR_ST = -1		/* 에러 발생 */
 } StoneType;
 
 
@@ -112,7 +113,8 @@ typedef struct _STONENODE {
 * @version	0.0.1
 */
 typedef struct _STONESTORAGE {
-	StoneNode** header;	/* 동적할당으로 구현된 StoneNode 포인터 header 배열: 행 표현 */
+	StoneNode** header;	/* 동적할당으로 구현된 StoneNode 포인터 배열: 행 표현 */
+	int size;			/* 포인터 배열의 크기 */
 } StoneStorage;
 
 
@@ -127,7 +129,8 @@ typedef struct _STONESTORAGE {
 */
 typedef enum _OMOKPANELTYPE {
 	regular	= 15,	/* 레귤러(15*15) 오목판 */
-	jumbo	= 19	/* 점보(19*19) 오목판 */
+	jumbo	= 19,	/* 점보(19*19) 오목판 */
+	ERR_OPT	= -1	/* 에러 발생 */
 } OmokPanelType;
 
 
