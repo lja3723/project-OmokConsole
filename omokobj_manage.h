@@ -281,20 +281,22 @@ StoneNode _StoneNode(Stone stone, struct _STONENODE* next);
 * @date
 * @version
 */
-void Set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
+void set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
 
 /**
 * @fn
-* @brief
-* @param
-* @return
+* @brief	
+* @param	
+* @return	
 *
 * @author
 * @date
 * @version
 */
-//StoneNote* 
+StoneNode* new_StoneNode(Stone stone, StoneNode* next);
 
+
+StoneNode copy_StoneNode(StoneNode* obj);
 
 
 
