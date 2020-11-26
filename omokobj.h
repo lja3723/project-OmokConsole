@@ -28,6 +28,7 @@
 
 
 /**
+* @struct	OmokCoord
 * @brief	좌표정보 객체
 * @details	오목판 내 좌표: 행과 열 정보를 표현
 * 
@@ -43,6 +44,7 @@ typedef struct _OMOKCOORD {
 
 
 /**
+* @enum		StoneType
 * @brief	오목알 타입 열거형
 * @details	오목알 타입(Black, White)을 표현
 *
@@ -59,6 +61,7 @@ typedef enum _STONETYPE {
 
 
 /**
+* @struct	OmokCursor
 * @brief	커서 객체
 * @details	커서의 위치(OmokCoord)와 오목알 정보(StoneType)를 표현
 *
@@ -74,6 +77,7 @@ typedef struct _OMOKCURSOR {
 
 
 /**
+* @struct	Stone
 * @brief	오목알 객체
 * @details	오목알의 위치(OmokCoord)와 오목알 정보(StoneType)를 표현
 *
@@ -89,6 +93,7 @@ typedef struct _STONE {
 
 
 /**
+* @struct	StoneNode
 * @brief	오목알 노드
 * @details	오목알 객체를 저장하는 노드 구현
 *
@@ -104,6 +109,7 @@ typedef struct _STONENODE {
 
 
 /**
+* @struct	StoneStorage
 * @brief	오목알 저장 객체
 * @details	오목알을 저장하는 자료구조를 정의하는 객체
 *			연결 리스트로 구현
@@ -120,6 +126,7 @@ typedef struct _STONESTORAGE {
 
 
 /**
+* @enum		OmokPanelType
 * @brief	오목판 타입 열거형
 * @details	오목판 타입(regular, jumbo)을 표현
 *
@@ -136,6 +143,7 @@ typedef enum _OMOKPANELTYPE {
 
 
 /**
+* @struct	OmokPanel
 * @brief	오목판 객체
 * @details	오목판 타입, 오목알 저장 객체를 표현
 *
@@ -151,6 +159,7 @@ typedef struct _OMOKPANEL {
 
 
 /**
+* @struct	OmokStatus
 * @brief	게임 진행 현황 객체
 * @details	착수 차례(오목알 정보 객체), 착수 횟수, 착수 좌표정보를 표현
 *
@@ -167,6 +176,7 @@ typedef struct _OMOKSTATUS {
 
 
 /**
+* @struct	Omok
 * @brief	통합 오목 객체
 * @details	커서, 오목판, 게임 진행 현황 객체 등을 종합함
 *
