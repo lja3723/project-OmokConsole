@@ -38,7 +38,7 @@
 * 이름				: set_객체()
 * 첫 매개변수		: 설정할 객체의 주소값
 * 그 외 매개변수		: 설정값(멤버 변수와 일대일 대응)
-* 반환값				: 설정이 잘 이루어졌으면 1, 그렇지 않으면 0을 반환
+* 반환값				: void
 *
 *
 * [객체 변환(_to_) 함수]
@@ -196,7 +196,7 @@ OmokCursor Stone_to_OmokCursor(Stone *obj);
 * @param OmokCursor *obj	: 설정할 객체의 주소값
 * @param OmokCoord locate	: 좌표 설정값
 * @param StoneType type		: 오목알 타입 설정값
-* @return int				: 잘 설정되면 1, 그렇지 않으면 0 반환
+* @return void
 *
 * @author daol
 * @date 2020-11-27 02:28
@@ -230,7 +230,7 @@ Stone _Stone(OmokCoord locate, StoneType type);
 * @param Stone* obj			: 설정할 객체
 * @param OmokCoord locate	: 설정할 오목알의 좌표
 * @param StoneType type		: 설정할 오목알 종류
-* @return Stone				: 생성된 객체
+* @return void
 *
 * @author daol
 * @date 2020-11-27 02:30
