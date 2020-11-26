@@ -10,7 +10,9 @@
 
 /**
 * @file omok.h
-*
+*/
+
+/*
 *	[파일 개요]
 * 
 *	1. 게임 시작
@@ -31,8 +33,8 @@
 **************************/
 
 /**
-*
-* @brief	오목 게임을 시작함
+* @fn void omok_start();
+* @brief	오목 게임 시작
 *
 * @param	void
 * @return	void
@@ -53,8 +55,8 @@ void omok_start();
 *********************************/
 
 /**
-*
-* @brief	본게임 시작 전 게임 초기값을 설정하는 유저 인터페이스 함수
+* @fn void UI_initial_set();
+* @brief	본게임 시작 전 게임 초기값을 설정
 *
 * @param	void
 * @return	void
@@ -63,8 +65,8 @@ void omok_start();
 void UI_initial_set();
 
 /**
-* 
-* @brief 오목 게임의 객체를 초기화하는 함수
+* @fn void obj_initialize();
+* @brief 오목 게임의 객체를 초기화
 * 
 * @param	void
 * @return	void

@@ -6,16 +6,17 @@
 /**
 * @file omokobj_judge.h
 * 
+* 
+* @details
 *	[파일 개요]
 * 오목 프로그램 객체가 특정 조건을 만족하는지 판단하는 함수를 선언함
+* 
 * 
 *	[함수 종류(공통)]
 * 유효성		valid_객체()
 * 반유효성	invalid_객체()
 * 
-*/
-
-/**
+*
 * [객체 유효성(valid) 함수]
 * 객체 유효성 검사 계열 함수는 객체가 유효한 값으로 초기화됐는지
 * 검사하거나 '동적 할당이 필요한 멤버'가 있는 객체가
@@ -24,9 +25,8 @@
 * 이름				: valid_객체()
 * 매개변수			: 유효성 검사할 객체의 주소값
 * 반환값				: 객체가 유효하면 1, 그렇지 않으면(NULL 등) 0 반환
-*/
-
-/**
+*
+* 
 * [객체 반유효성(invalid) 함수]
 * 객체 반유효성 검사 계열 함수는 valid 함수의 반환값을 반대로 바꾼 함수임
 *
@@ -46,6 +46,7 @@
 ******************************************************************/
 
 /**
+* @fn int valid_OmokCoord(OmokCoord* obj);
 * @brief OmokCoord 유효성 검사:
 *		객체의 row가 'A'~'Z'이고 객체의 col이 1~19면 유효함
 * @param OmokCoord* obj	: 유효성 검사할 객체의 주소값
@@ -58,6 +59,7 @@
 int valid_OmokCoord(OmokCoord* obj);
 
 /**
+* @fn int invalid_OmokCoord(OmokCoord* obj);
 * @brief OmokCoord 반유효성 검사:
 *		객체의 row가 'A'~'Z'이고 객체의 col이 1~19면 유효함
 * @param OmokCoord* obj	: 반유효성 검사할 객체의 주소값
@@ -78,6 +80,7 @@ int invalid_OmokCoord(OmokCoord* obj);
 ********************************************************************/
 
 /**
+* @fn int valid_StoneType(StoneType* obj);
 * @brief StoneType 유효성 검사:
 *		객체가 ERR_ST가 아니면 유효함
 * @param StoneType* obj		: 유효성 검사할 객체의 주소값
@@ -90,6 +93,7 @@ int invalid_OmokCoord(OmokCoord* obj);
 int valid_StoneType(StoneType* obj);
 
 /**
+* @fn int invalid_StoneType(StoneType* obj);
 * @brief StoneType 반유효성 검사:
 *		객체가 ERR_ST가 아니면 유효함
 * @param StoneType* obj		: 유효성 검사할 객체의 주소값

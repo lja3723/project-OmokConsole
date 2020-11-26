@@ -230,6 +230,8 @@ example
 
 이런 양식 doxygen 주석이라 하며, 자세한 정보는 다음 사이트를 참고바람
 https://onecellboy.tistory.com/342
+https://gamemyth.tistory.com/entry/Doxygen-%EC%A3%BC%EC%84%9D-%EC%82%AC%EC%9A%A9%EB%B2%95
+
 
 doxygen 주석 양식(아래를 복사해 사용)
 /**
