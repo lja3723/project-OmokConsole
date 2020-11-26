@@ -1,0 +1,222 @@
+\hypertarget{readme_8txt}{}\doxysection{C\+:/\+Installed\+Program/\+Computer Engineering/\+Git\+Hub/lja3723/project\+\_\+omok\+\_\+with\+\_\+c/readme.txt File Reference}
+\label{readme_8txt}\index{C:/InstalledProgram/Computer Engineering/GitHub/lja3723/project\_omok\_with\_c/readme.txt@{C:/InstalledProgram/Computer Engineering/GitHub/lja3723/project\_omok\_with\_c/readme.txt}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 \mbox{\hyperlink{readme_8txt_ae9b2a7c497cc945282ce044e5e6bc5c6}{레귤러}} (15×15)
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 \mbox{\hyperlink{readme_8txt_a783333b03002c343d79658f232acd4ef}{점보}} (19×19) 두 가지가 있다. 2.\+1.\+1. 선으로 이루어진 오목판과 오목판의 좌표 선으로 이루어진 오목판과 오목판의 좌표의 예시다. 오목판의 선을 이루는 \mbox{\hyperlink{readme_8txt_a445ea8f9e5f3dd06ebb0e0a2bfa566b8}{문자}}(┌ ┬ ┐ └ ┴ ┘ ├ ─ ┤) 는 \textquotesingle{}ㅂ \textquotesingle{}을 누르고 한자 키를 누르면 입력할 수 있고
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 \mbox{\hyperlink{readme_8txt_a445ea8f9e5f3dd06ebb0e0a2bfa566b8}{문자}} (·) 는 \textquotesingle{}ㄱ\textquotesingle{} 을 누르고 한자키를 누르면 입력할 수 있다. 오목판의 좌표는 알파벳과 숫자로 이루어져 있다. 알파벳은 행의 위치를 나타내고
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 \mbox{\hyperlink{readme_8txt_ac478f0097cedc8eb2c3bac1d0464d58d}{example}} (\mbox{\hyperlink{readme_8txt_ae9b2a7c497cc945282ce044e5e6bc5c6}{레귤러}}) 1 5 10 15 A ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐ B ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ C ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ D ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ E ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ F ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ G ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ H ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ I ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ J ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ K ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ L ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ M ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ O ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ P └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘ example(\mbox{\hyperlink{readme_8txt_a783333b03002c343d79658f232acd4ef}{점보}}) 1 5 10 15 19 A ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐ B ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ C ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ D ├─┼─┼─·─┼─┼─┼─┼─┼─·─┼─┼─┼─┼─┼─·─┼─┼─┤ E ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ F ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ G ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ H ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ I ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ J ├─┼─┼─·─┼─┼─┼─┼─┼─·─┼─┼─┼─┼─┼─·─┼─┼─┤ K ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ L ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ M ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ N ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ O ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ P ├─┼─┼─·─┼─┼─┼─┼─┼─·─┼─┼─┼─┼─┼─·─┼─┼─┤ Q ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ R ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ S └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ 2.\+1.\+2. \mbox{\hyperlink{readme_8txt_a7ad9af47ef6893120baa16bf9239efae}{커서}} 오목알을 착수할 위치는 키보드(W\+A\+SD 또는 방향키) 를 통해 커서를 옮겨 선택할 수 있다. 커서를 표현하는 문자는 흑의 차례는 ◐
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 \mbox{\hyperlink{readme_8txt_a9d81c4e352b5b8ab26e62af4d9ad3e4a}{example}} (\mbox{\hyperlink{readme_8txt_ae9b2a7c497cc945282ce044e5e6bc5c6}{레귤러}}-\/흑의 \mbox{\hyperlink{readme_8txt_a6c14c66e8e7ac9cd7560c0669eaa7f6b}{차례}}) 1 5 10 15 A ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐ B ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ C ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ D ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ E ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ F ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ G ├─┼─┼─┼─┼─┼─┼─┼─┼─□─┼─┼─┼─┼─┤ H ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ I ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ J ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ K ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ L ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ M ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ O ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ P └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ 2.\+1.\+3. 착수된 오목알 커서를 옮긴 후 엔터키나 스페이스 바를 눌러 오목알을 착수할 수 있다. 착수된 오목알은 ●(흑색) 과 ○(백색) 으로 표시한다. 이 문자는 \textquotesingle{}ㅁ \textquotesingle{}키를 누르고 한자키를 눌러 입력할 수 있다. example 1 5 10 15 A ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐ B ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ C ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ D ├─┼─┼─┼─┼─┼─┼─┼─┼─●─┼─┼─┼─┼─┤ E ├─┼─┼─┼─┼─┼─┼─┼─○─┼─┼─┼─┼─┼─┤ F ├─┼─┼─┼─┼─●─●─○─┼─┼─┼─┼─┼─┼─┤ G ├─┼─┼─┼─┼─┼─○─●─┼─┼─┼─┼─┼─┼─┤ H ├─┼─·─┼─┼─○─○─●─●─┼─┼─┼─·─┼─┤ I ├─┼─┼─┼─●─●─○─○─○─○─┼─┼─┼─┼─┤ J ├─┼─┼─┼─┼─●─┼─┼─┼─┼─┼─┼─┼─┼─┤ K ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ L ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ M ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ O ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ P └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ 2.\+2. 오목 진행 알리미 오목 진행상황을 알려주는 두 줄짜리 글씨다. 누가 오목을 두는지
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 \mbox{\hyperlink{readme_8txt_aa13b98764c729c54a72abb6923565a95}{불가능한지}} (33, 44)
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 \mbox{\hyperlink{readme_8txt_ae2784ed24805ebe948d16b6775ce5b8b}{example}} (착수불가여부 표시위치) 1 5 10 15 A ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐ B ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ C ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ D ├─┼─┼─┼─┼─┼─┼─┼─┼─●─┼─┼─┼─┼─┤ E ├─┼─┼─┼─┼─┼─┼─┼─○─┼─┼─┼─┼─┼─┤ F ├─┼─┼─┼─┼─●─●─○─┼─┼─┼─┼─┼─┼─┤ G ├─┼─┼─┼─┼─┼─○─●─┼─┼─┼─┼─┼─┼─┤ H ├─┼─·─┼─┼─○─○─●─●─┼─┼─┼─·─┼─┤ I ├─┼─┼─┼─●─●─○─○─○─○─□─┼─┼─┼─┤ J ├─┼─┼─┼─┼─●─┼─┼─┼─┼─┼─┼─┼─┼─┤ K ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ L ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ M ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ O ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ P └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘ -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/ 2.\+3. 게임 종료 흑과 백 두 플레이어중 먼저 5개의 돌을 놓는 사람이 승리한다. examples\mbox{[}●의 \mbox{\hyperlink{readme_8txt_a6c14c66e8e7ac9cd7560c0669eaa7f6b}{차례}}\mbox{]}\mbox{[}I11\mbox{]}(착수불가여부 표시위치) 1 5 10 15 A ┌─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┬─┐ B ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ C ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ D ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ E ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ F ├─┼─┼─┼─●─●─●─●─●─┼─┼─┼─┼─┼─┤ G ├─┼─┼─┼─○─○─○─○─┼─┼─┼─┼─┼─┼─┤ H ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ I ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ J ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ K ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ L ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ M ├─┼─·─┼─┼─┼─┼─·─┼─┼─┼─┼─·─┼─┤ O ├─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┼─┤ P └─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┴─┘\mbox{[}게임 결과\mbox{]} ● 의 승리! ○ 의 패배...
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 게임 진행 현황 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} omokobj\+\_\+manage c omokobj\+\_\+manage h 오목 프로그램 객체를 \mbox{\hyperlink{readme_8txt_a557d52693614d1352c637fb2e6742226}{관리}} (설정, 생성, 변환, 제거 등) 하는 \mbox{\hyperlink{readme_8txt_ab5e4c293b8af1ef7a79a7ef02c2258ef}{함수}} 선언 및 구현 3.\+3. omokobj\+\_\+judge.\+c/omokobj\+\_\+judge.\+h 오목 프로그램 객체가 특정 조건을 만족하는지 판단하는 \mbox{\hyperlink{readme_8txt_ab5e4c293b8af1ef7a79a7ef02c2258ef}{함수}} 선언 및 구현 3.\+4. omokobj\+\_\+conio.\+c/omokobj\+\_\+conio.\+h 자연스러운 콘솔 출력에 필요한 Windows.\+h 함수를 정의한 뒤 오목 프로그램 객체를 콘솔에 출력하는 \mbox{\hyperlink{readme_8txt_ab5e4c293b8af1ef7a79a7ef02c2258ef}{함수}} 선언 및 구현 3.\+5. omok\+\_\+algorithm.\+c/omok\+\_\+algorithm.\+h 오목 규칙(33
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+이 문서는 오목 프로그램 \mbox{\hyperlink{readme_8txt_a5f2f2e5c9cd4e225970944aa005b4b35}{개요}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 \mbox{\hyperlink{readme_8txt_a56974440fcee8c6445ea4df9a5fc0800}{기능}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 \mbox{\hyperlink{readme_8txt_aa545435fb59cf8679dfe6152d5ea26d5}{문서이다}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 \mbox{\hyperlink{readme_8txt_a7ad9af47ef6893120baa16bf9239efae}{커서}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 \mbox{\hyperlink{readme_8txt_a2387cfc363eaa1f1a3e0af20b3227a78}{시작하고}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 \mbox{\hyperlink{readme_8txt_a6c14c66e8e7ac9cd7560c0669eaa7f6b}{차례}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 \mbox{\hyperlink{readme_8txt_a9fb9ab19d4597b2174a5ffa4b12e5314}{위치}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 \mbox{\hyperlink{readme_8txt_a04532db6e55a2d6c09e837175a9af8d4}{표시하며}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 \mbox{\hyperlink{readme_8txt_a21b7c9434aaf58af19c5a4f270bdf98c}{노드}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 \mbox{\hyperlink{readme_8txt_a0c2676f58f3a4faf618189706a418c10}{회수}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 오목판 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 게임 진행 현황 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} omokobj\+\_\+manage c omokobj\+\_\+manage h 오목 프로그램 객체를 \mbox{\hyperlink{readme_8txt_ac5c4f0da7262a7dd39b7465f9625ff53}{준수여부}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 게임 진행 현황 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} omokobj\+\_\+manage c omokobj\+\_\+manage h 오목 프로그램 객체를 승패 여부 등을 판단하는 \mbox{\hyperlink{readme_8txt_ab5e4c293b8af1ef7a79a7ef02c2258ef}{함수}} 선언 및 구현 omok c omok h 오목 프로그램을 실행 및 \mbox{\hyperlink{readme_8txt_a560a1f87dca1648c5322c1dea0dd1b50}{종료하고}}
+\item 
+이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 게임 진행 현황 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} omokobj\+\_\+manage c omokobj\+\_\+manage h 오목 프로그램 객체를 승패 여부 등을 판단하는 함수 선언 및 구현 omok c omok h 오목 프로그램을 실행 및 오목 관련 함수를 이용해 오목 게임을 실제로 구현하는 함수 선언 및 구현 omok\+\_\+err c omok\+\_\+err h 오목 프로그램 실행 중 발생하는 에러를 관리하는 함수 선언 및 구현 \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} c 오목 실행 함수를 호출하는 메인 \mbox{\hyperlink{readme_8txt_ab5e4c293b8af1ef7a79a7ef02c2258ef}{함수}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{readme_8txt_ac478f0097cedc8eb2c3bac1d0464d58d}\label{readme_8txt_ac478f0097cedc8eb2c3bac1d0464d58d}} 
+\index{readme.txt@{readme.txt}!example@{example}}
+\index{example@{example}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{example()}{example()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 example (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{readme_8txt_ae9b2a7c497cc945282ce044e5e6bc5c6}{레귤러}}}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{readme_8txt_a9d81c4e352b5b8ab26e62af4d9ad3e4a}\label{readme_8txt_a9d81c4e352b5b8ab26e62af4d9ad3e4a}} 
+\index{readme.txt@{readme.txt}!example@{example}}
+\index{example@{example}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{example()}{example()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 example (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{readme_8txt_ae9b2a7c497cc945282ce044e5e6bc5c6}{레귤러}}-\/흑의}]{차례 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{readme_8txt_ae2784ed24805ebe948d16b6775ce5b8b}\label{readme_8txt_ae2784ed24805ebe948d16b6775ce5b8b}} 
+\index{readme.txt@{readme.txt}!example@{example}}
+\index{example@{example}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{example()}{example()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 example (\begin{DoxyParamCaption}\item[{착수불가여부}]{표시위치 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{readme_8txt_a557d52693614d1352c637fb2e6742226}\label{readme_8txt_a557d52693614d1352c637fb2e6742226}} 
+\index{readme.txt@{readme.txt}!관리@{관리}}
+\index{관리@{관리}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{관리()}{관리()}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 게임 진행 현황 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} omokobj\+\_\+manage c omokobj\+\_\+manage h 오목 프로그램 객체를 관리 (\begin{DoxyParamCaption}\item[{설정}]{,  }\item[{생성}]{,  }\item[{변환}]{,  }\item[{제거}]{등 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{readme_8txt_ae9b2a7c497cc945282ce044e5e6bc5c6}\label{readme_8txt_ae9b2a7c497cc945282ce044e5e6bc5c6}} 
+\index{readme.txt@{readme.txt}!레귤러@{레귤러}}
+\index{레귤러@{레귤러}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{레귤러()}{레귤러()}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 레귤러 (\begin{DoxyParamCaption}\item[{15×15}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{readme_8txt_a445ea8f9e5f3dd06ebb0e0a2bfa566b8}\label{readme_8txt_a445ea8f9e5f3dd06ebb0e0a2bfa566b8}} 
+\index{readme.txt@{readme.txt}!문자@{문자}}
+\index{문자@{문자}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{문자()}{문자()}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 문자 (\begin{DoxyParamCaption}\item[{·}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{readme_8txt_aa13b98764c729c54a72abb6923565a95}\label{readme_8txt_aa13b98764c729c54a72abb6923565a95}} 
+\index{readme.txt@{readme.txt}!불가능한지@{불가능한지}}
+\index{불가능한지@{불가능한지}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{불가능한지()}{불가능한지()}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 불가능한지 (\begin{DoxyParamCaption}\item[{33}]{,  }\item[{44}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{readme_8txt_a783333b03002c343d79658f232acd4ef}\label{readme_8txt_a783333b03002c343d79658f232acd4ef}} 
+\index{readme.txt@{readme.txt}!점보@{점보}}
+\index{점보@{점보}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{점보()}{점보()}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점보 (\begin{DoxyParamCaption}\item[{19×19}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{readme_8txt_a5f2f2e5c9cd4e225970944aa005b4b35}\label{readme_8txt_a5f2f2e5c9cd4e225970944aa005b4b35}} 
+\index{readme.txt@{readme.txt}!개요@{개요}}
+\index{개요@{개요}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{개요}{개요}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 개요}
+
+\mbox{\Hypertarget{readme_8txt_aa0143196da00badb92096d31e9d04199}\label{readme_8txt_aa0143196da00badb92096d31e9d04199}} 
+\index{readme.txt@{readme.txt}!객체@{객체}}
+\index{객체@{객체}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{객체}{객체}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 객체 게임 진행 현황 착수 착수 좌표정보 통합 객체}
+
+\mbox{\Hypertarget{readme_8txt_a56974440fcee8c6445ea4df9a5fc0800}\label{readme_8txt_a56974440fcee8c6445ea4df9a5fc0800}} 
+\index{readme.txt@{readme.txt}!기능@{기능}}
+\index{기능@{기능}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{기능}{기능}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 기능}
+
+\mbox{\Hypertarget{readme_8txt_a21b7c9434aaf58af19c5a4f270bdf98c}\label{readme_8txt_a21b7c9434aaf58af19c5a4f270bdf98c}} 
+\index{readme.txt@{readme.txt}!노드@{노드}}
+\index{노드@{노드}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{노드}{노드}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 노드}
+
+\mbox{\Hypertarget{readme_8txt_aa545435fb59cf8679dfe6152d5ea26d5}\label{readme_8txt_aa545435fb59cf8679dfe6152d5ea26d5}} 
+\index{readme.txt@{readme.txt}!문서이다@{문서이다}}
+\index{문서이다@{문서이다}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{문서이다}{문서이다}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 문서이다}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{==========================================================================================}
+\DoxyCodeLine{1. 프로그램 \mbox{\hyperlink{readme_8txt_a5f2f2e5c9cd4e225970944aa005b4b35}{개요}}}
+\DoxyCodeLine{두 명의 사용자가 오목을 두는 프로그램}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{==========================================================================================}
+\DoxyCodeLine{2. 프로그램 인터페이스(\mbox{\hyperlink{readme_8txt_a56974440fcee8c6445ea4df9a5fc0800}{기능}})}
+\DoxyCodeLine{2.1. \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}}}
+\DoxyCodeLine{오목판은 점과 선으로 이루어진 오목판과 오목판의 좌표}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{readme_8txt_a2387cfc363eaa1f1a3e0af20b3227a78}\label{readme_8txt_a2387cfc363eaa1f1a3e0af20b3227a78}} 
+\index{readme.txt@{readme.txt}!시작하고@{시작하고}}
+\index{시작하고@{시작하고}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{시작하고}{시작하고}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 시작하고}
+
+\mbox{\Hypertarget{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}\label{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}} 
+\index{readme.txt@{readme.txt}!오목판@{오목판}}
+\index{오목판@{오목판}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{오목판}{오목판}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 오목판 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 오목판}
+
+\mbox{\Hypertarget{readme_8txt_a9fb9ab19d4597b2174a5ffa4b12e5314}\label{readme_8txt_a9fb9ab19d4597b2174a5ffa4b12e5314}} 
+\index{readme.txt@{readme.txt}!위치@{위치}}
+\index{위치@{위치}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{위치}{위치}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 위치}
+
+\mbox{\Hypertarget{readme_8txt_a560a1f87dca1648c5322c1dea0dd1b50}\label{readme_8txt_a560a1f87dca1648c5322c1dea0dd1b50}} 
+\index{readme.txt@{readme.txt}!종료하고@{종료하고}}
+\index{종료하고@{종료하고}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{종료하고}{종료하고}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 게임 진행 현황 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} omokobj\+\_\+manage c omokobj\+\_\+manage h 오목 프로그램 객체를 승패 여부 등을 판단하는 \mbox{\hyperlink{readme_8txt_ab5e4c293b8af1ef7a79a7ef02c2258ef}{함수}} 선언 및 구현 omok c omok h 오목 프로그램을 실행 및 종료하고}
+
+\mbox{\Hypertarget{readme_8txt_ac5c4f0da7262a7dd39b7465f9625ff53}\label{readme_8txt_ac5c4f0da7262a7dd39b7465f9625ff53}} 
+\index{readme.txt@{readme.txt}!준수여부@{준수여부}}
+\index{준수여부@{준수여부}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{준수여부}{준수여부}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 게임 진행 현황 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} omokobj\+\_\+manage c omokobj\+\_\+manage h 오목 프로그램 객체를 준수여부}
+
+\mbox{\Hypertarget{readme_8txt_a6c14c66e8e7ac9cd7560c0669eaa7f6b}\label{readme_8txt_a6c14c66e8e7ac9cd7560c0669eaa7f6b}} 
+\index{readme.txt@{readme.txt}!차례@{차례}}
+\index{차례@{차례}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{차례}{차례}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 차례}
+
+\mbox{\Hypertarget{readme_8txt_a7ad9af47ef6893120baa16bf9239efae}\label{readme_8txt_a7ad9af47ef6893120baa16bf9239efae}} 
+\index{readme.txt@{readme.txt}!커서@{커서}}
+\index{커서@{커서}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{커서}{커서}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 커서}
+
+\mbox{\Hypertarget{readme_8txt_a04532db6e55a2d6c09e837175a9af8d4}\label{readme_8txt_a04532db6e55a2d6c09e837175a9af8d4}} 
+\index{readme.txt@{readme.txt}!표시하며@{표시하며}}
+\index{표시하며@{표시하며}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{표시하며}{표시하며}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 표시하며}
+
+\mbox{\Hypertarget{readme_8txt_ab5e4c293b8af1ef7a79a7ef02c2258ef}\label{readme_8txt_ab5e4c293b8af1ef7a79a7ef02c2258ef}} 
+\index{readme.txt@{readme.txt}!함수@{함수}}
+\index{함수@{함수}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{함수}{함수}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 착수 좌표정보 통합 게임 진행 현황 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} omokobj\+\_\+manage c omokobj\+\_\+manage h 오목 프로그램 객체를 승패 여부 등을 판단하는 함수 선언 및 구현 omok c omok h 오목 프로그램을 실행 및 오목 관련 함수를 이용해 오목 게임을 실제로 구현하는 함수 선언 및 구현 omok\+\_\+err c omok\+\_\+err h 오목 프로그램 실행 중 발생하는 에러를 관리하는 함수 선언 및 구현 \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} c 오목 실행 함수를 호출하는 메인 함수}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{==========================================================================================}
+\DoxyCodeLine{4. 기타}
+\DoxyCodeLine{다음은 \mbox{\hyperlink{readme_8txt_ab5e4c293b8af1ef7a79a7ef02c2258ef}{함수}}(또는 구조체)에 대해 서술할 때 사용하는 주석 양식임}
+\DoxyCodeLine{}
+\DoxyCodeLine{}
+\DoxyCodeLine{이런 양식 doxygen 주석이라 하며}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{readme_8txt_a0c2676f58f3a4faf618189706a418c10}\label{readme_8txt_a0c2676f58f3a4faf618189706a418c10}} 
+\index{readme.txt@{readme.txt}!회수@{회수}}
+\index{회수@{회수}!readme.txt@{readme.txt}}
+\doxysubsubsection{\texorpdfstring{회수}{회수}}
+{\footnotesize\ttfamily 이 문서는 오목 프로그램 인터페이스 및 소스 파일을 설명한 기술 착수된 오목알로 이루어진다 오목판의 크기는 점 숫자는 열의 위치를 나타낸다 행의 위치는 A부터 열의 위치는 시작한다 백의 차례는 ◑으로 한다 이 문자는 ㅁ 을 누르고 한자키를 눌러 입력할 수 있다 착수를 시도한 위치가 커서의 위치가 어디인지를 알려준다 왼쪽에는 오목을 두는 오른쪽에는 커서의 착수 가능 여부는 한줄 아래 가운데에 오목 진행 알리미는 \mbox{\hyperlink{readme_8txt_a6041589cd4ff9f78ba12bc232a6e87f6}{오목판}} 위에 표시한다 다음은 예시다 좌표정보 오목알 좌표정보 오목알 오목알 저장 \mbox{\hyperlink{readme_8txt_aa0143196da00badb92096d31e9d04199}{객체}} 게임 진행 현황 착수 회수}
+

@@ -1,0 +1,138 @@
+\hypertarget{omokobj__judge_8h}{}\doxysection{C\+:/\+Installed\+Program/\+Computer Engineering/\+Git\+Hub/lja3723/project\+\_\+omok\+\_\+with\+\_\+c/omokobj\+\_\+judge.h File Reference}
+\label{omokobj__judge_8h}\index{C:/InstalledProgram/Computer Engineering/GitHub/lja3723/project\_omok\_with\_c/omokobj\_judge.h@{C:/InstalledProgram/Computer Engineering/GitHub/lja3723/project\_omok\_with\_c/omokobj\_judge.h}}
+{\ttfamily \#include \char`\"{}omokobj.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{omokobj__judge_8h_a139b4a7f89d379a7664d1b2c448aecd2}{valid\+\_\+\+Omok\+Coord}} (\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} 유효성 검사\+: 객체의 row가 \textquotesingle{}A\textquotesingle{}$\sim$\textquotesingle{}Z\textquotesingle{}이고 객체의 col이 1$\sim$19면 유효함 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{omokobj__judge_8h_a358324746797bf0f3a1954b07cf009c3}{invalid\+\_\+\+Omok\+Coord}} (\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} 반유효성 검사\+: 객체의 row가 \textquotesingle{}A\textquotesingle{}$\sim$\textquotesingle{}Z\textquotesingle{}이고 객체의 col이 1$\sim$19면 유효함 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{omokobj__judge_8h_a7f385bc4a4ba39cf515481c581af3397}{valid\+\_\+\+Stone\+Type}} (\mbox{\hyperlink{omokobj_8h_a4e67486a2a6595637db872aa78fd2ce0}{Stone\+Type}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Stone\+Type 유효성 검사\+: 객체가 E\+R\+R\+\_\+\+S\+T가 아니면 유효함 \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{omokobj__judge_8h_aa85bb236daa01e4d980b442d22e21e20}{invalid\+\_\+\+Stone\+Type}} (\mbox{\hyperlink{omokobj_8h_a4e67486a2a6595637db872aa78fd2ce0}{Stone\+Type}} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Stone\+Type 반유효성 검사\+: 객체가 E\+R\+R\+\_\+\+S\+T가 아니면 유효함 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{[}파일 개요\mbox{]} 오목 프로그램 객체가 특정 조건을 만족하는지 판단하는 함수를 선언함
+
+\mbox{[}함수 종류(공통)\mbox{]} 유효성 valid\+\_\+객체() 반유효성 invalid\+\_\+객체()
+
+\mbox{[}객체 유효성(valid) 함수\mbox{]} 객체 유효성 검사 계열 함수는 객체가 유효한 값으로 초기화됐는지 검사하거나 \textquotesingle{}동적 할당이 필요한 멤버\textquotesingle{}가 있는 객체가 유효한 동적 할당이 되어 있는지 판단하는 역할을 담당함
+
+이름 \+: valid\+\_\+객체() 매개변수 \+: 유효성 검사할 객체의 주소값 반환값 \+: 객체가 유효하면 1, 그렇지 않으면(N\+U\+LL 등) 0 반환
+
+\mbox{[}객체 반유효성(invalid) 함수\mbox{]} 객체 반유효성 검사 계열 함수는 valid 함수의 반환값을 반대로 바꾼 함수임
+
+이름 \+: invalid\+\_\+객체() 매개변수 \+: 유효성 검사할 객체의 주소값 반환값 \+: !valid\+\_\+객체() -\/ 객체가 유효하지 않으면(N\+U\+LL 등) 1, 유효하면 0 반환 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{omokobj__judge_8h_a358324746797bf0f3a1954b07cf009c3}\label{omokobj__judge_8h_a358324746797bf0f3a1954b07cf009c3}} 
+\index{omokobj\_judge.h@{omokobj\_judge.h}!invalid\_OmokCoord@{invalid\_OmokCoord}}
+\index{invalid\_OmokCoord@{invalid\_OmokCoord}!omokobj\_judge.h@{omokobj\_judge.h}}
+\doxysubsubsection{\texorpdfstring{invalid\_OmokCoord()}{invalid\_OmokCoord()}}
+{\footnotesize\ttfamily int invalid\+\_\+\+Omok\+Coord (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} 반유효성 검사\+: 객체의 row가 \textquotesingle{}A\textquotesingle{}$\sim$\textquotesingle{}Z\textquotesingle{}이고 객체의 col이 1$\sim$19면 유효함 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Omok\+Coord$\ast$} & obj \+: 반유효성 검사할 객체의 주소값 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} \+: 유효하지 않으면 1, 유효하면 0 반환
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+lja3723 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/11-\/25 17\+:50 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\mbox{\Hypertarget{omokobj__judge_8h_aa85bb236daa01e4d980b442d22e21e20}\label{omokobj__judge_8h_aa85bb236daa01e4d980b442d22e21e20}} 
+\index{omokobj\_judge.h@{omokobj\_judge.h}!invalid\_StoneType@{invalid\_StoneType}}
+\index{invalid\_StoneType@{invalid\_StoneType}!omokobj\_judge.h@{omokobj\_judge.h}}
+\doxysubsubsection{\texorpdfstring{invalid\_StoneType()}{invalid\_StoneType()}}
+{\footnotesize\ttfamily int invalid\+\_\+\+Stone\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{omokobj_8h_a4e67486a2a6595637db872aa78fd2ce0}{Stone\+Type}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Stone\+Type 반유효성 검사\+: 객체가 E\+R\+R\+\_\+\+S\+T가 아니면 유효함 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Stone\+Type$\ast$} & obj \+: 유효성 검사할 객체의 주소값 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int \+: 유효하지 않으면 1, 유효하면 0 반환
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+lja3723 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/11-\/25 17\+:50 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\mbox{\Hypertarget{omokobj__judge_8h_a139b4a7f89d379a7664d1b2c448aecd2}\label{omokobj__judge_8h_a139b4a7f89d379a7664d1b2c448aecd2}} 
+\index{omokobj\_judge.h@{omokobj\_judge.h}!valid\_OmokCoord@{valid\_OmokCoord}}
+\index{valid\_OmokCoord@{valid\_OmokCoord}!omokobj\_judge.h@{omokobj\_judge.h}}
+\doxysubsubsection{\texorpdfstring{valid\_OmokCoord()}{valid\_OmokCoord()}}
+{\footnotesize\ttfamily int valid\+\_\+\+Omok\+Coord (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} 유효성 검사\+: 객체의 row가 \textquotesingle{}A\textquotesingle{}$\sim$\textquotesingle{}Z\textquotesingle{}이고 객체의 col이 1$\sim$19면 유효함 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Omok\+Coord$\ast$} & obj \+: 유효성 검사할 객체의 주소값 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int \+: 유효하면 1, 그렇지 않으면 0 반환
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+lja3723 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/11-\/25 12\+:10 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\mbox{\Hypertarget{omokobj__judge_8h_a7f385bc4a4ba39cf515481c581af3397}\label{omokobj__judge_8h_a7f385bc4a4ba39cf515481c581af3397}} 
+\index{omokobj\_judge.h@{omokobj\_judge.h}!valid\_StoneType@{valid\_StoneType}}
+\index{valid\_StoneType@{valid\_StoneType}!omokobj\_judge.h@{omokobj\_judge.h}}
+\doxysubsubsection{\texorpdfstring{valid\_StoneType()}{valid\_StoneType()}}
+{\footnotesize\ttfamily int valid\+\_\+\+Stone\+Type (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{omokobj_8h_a4e67486a2a6595637db872aa78fd2ce0}{Stone\+Type}} $\ast$}]{obj }\end{DoxyParamCaption})}
+
+
+
+Stone\+Type 유효성 검사\+: 객체가 E\+R\+R\+\_\+\+S\+T가 아니면 유효함 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Stone\+Type$\ast$} & obj \+: 유효성 검사할 객체의 주소값 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int \+: 유효하면 1, 그렇지 않으면 0 반환
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+lja3723 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/11-\/25 12\+:15 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}

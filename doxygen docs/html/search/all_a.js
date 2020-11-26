@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['obj_5finitialize_25',['obj_initialize',['../omok_8h.html#a3433cbb2b3ba6a852edfbcf3d795da0c',1,'omok.h']]],
+  ['omok_26',['Omok',['../struct_omok.html',1,'Omok'],['../omokobj_8h.html#aa168be8da9704e16f658e388337603e9',1,'Omok():&#160;omokobj.h']]],
+  ['omok_2ec_27',['omok.c',['../omok_8c.html',1,'']]],
+  ['omok_2eh_28',['omok.h',['../omok_8h.html',1,'']]],
+  ['omok_5falgorithm_2ec_29',['omok_algorithm.c',['../omok__algorithm_8c.html',1,'']]],
+  ['omok_5falgorithm_2eh_30',['omok_algorithm.h',['../omok__algorithm_8h.html',1,'']]],
+  ['omok_5ferr_2ec_31',['omok_err.c',['../omok__err_8c.html',1,'']]],
+  ['omok_5ferr_2eh_32',['omok_err.h',['../omok__err_8h.html',1,'']]],
+  ['omok_5fstart_33',['omok_start',['../omok_8c.html#a1a23a44ea18b9280a4cc37a441879e2b',1,'omok_start():&#160;omok.c'],['../omok_8h.html#a1a23a44ea18b9280a4cc37a441879e2b',1,'omok_start():&#160;omok.c']]],
+  ['omokcoord_34',['OmokCoord',['../struct_omok_coord.html',1,'OmokCoord'],['../omokobj_8h.html#aea32921b9337dc842c4f852423a42afa',1,'OmokCoord():&#160;omokobj.h']]],
+  ['omokcursor_35',['OmokCursor',['../struct_omok_cursor.html',1,'OmokCursor'],['../omokobj_8h.html#a462abcd6de80ea7a75cb4af965679f1f',1,'OmokCursor():&#160;omokobj.h']]],
+  ['omokobj_2ec_36',['omokobj.c',['../omokobj_8c.html',1,'']]],
+  ['omokobj_2eh_37',['omokobj.h',['../omokobj_8h.html',1,'']]],
+  ['omokobj_5fconio_2ec_38',['omokobj_conio.c',['../omokobj__conio_8c.html',1,'']]],
+  ['omokobj_5fconio_2eh_39',['omokobj_conio.h',['../omokobj__conio_8h.html',1,'']]],
+  ['omokobj_5fjudge_2ec_40',['omokobj_judge.c',['../omokobj__judge_8c.html',1,'']]],
+  ['omokobj_5fjudge_2eh_41',['omokobj_judge.h',['../omokobj__judge_8h.html',1,'']]],
+  ['omokobj_5fmanage_2ec_42',['omokobj_manage.c',['../omokobj__manage_8c.html',1,'']]],
+  ['omokobj_5fmanage_2eh_43',['omokobj_manage.h',['../omokobj__manage_8h.html',1,'']]],
+  ['omokpanel_44',['OmokPanel',['../struct_omok_panel.html',1,'OmokPanel'],['../omokobj_8h.html#af61aed722214836a2536878a35c6fb66',1,'OmokPanel():&#160;omokobj.h']]],
+  ['omokpaneltype_45',['OmokPanelType',['../omokobj_8h.html#a2973b5ef0b4924e59e86151b2f41cf6b',1,'omokobj.h']]],
+  ['omokstatus_46',['OmokStatus',['../struct_omok_status.html',1,'OmokStatus'],['../omokobj_8h.html#a915c16ca9a654f8f50ed422b73d48782',1,'OmokStatus():&#160;omokobj.h']]]
+];

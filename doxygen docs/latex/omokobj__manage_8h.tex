@@ -1,0 +1,157 @@
+\hypertarget{omokobj__manage_8h}{}\doxysection{C\+:/\+Installed\+Program/\+Computer Engineering/\+Git\+Hub/lja3723/project\+\_\+omok\+\_\+with\+\_\+c/omokobj\+\_\+manage.h File Reference}
+\label{omokobj__manage_8h}\index{C:/InstalledProgram/Computer Engineering/GitHub/lja3723/project\_omok\_with\_c/omokobj\_manage.h@{C:/InstalledProgram/Computer Engineering/GitHub/lja3723/project\_omok\_with\_c/omokobj\_manage.h}}
+{\ttfamily \#include \char`\"{}omokobj.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} \mbox{\hyperlink{omokobj__manage_8h_aeb3390135ccc20f23dea361f39815fac}{\+\_\+\+Omok\+Coord}} (char row, short col)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} 생성 \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{omokobj__manage_8h_ab811bb4cf742428a2bbb5c093ba921d1}{set\+\_\+\+Omok\+Coord}} (\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} $\ast$obj, char row, short col)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} 설정 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} \mbox{\hyperlink{omokobj__manage_8h_a548cab5293e4d42fd323ff4bf71c27ba}{Str\+\_\+to\+\_\+\+Omok\+Coord}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em 문자열을 Omok\+Coord로 변환 \end{DoxyCompactList}\item 
+\mbox{\hyperlink{omokobj_8h_a4e67486a2a6595637db872aa78fd2ce0}{Stone\+Type}} \mbox{\hyperlink{omokobj__manage_8h_a3dfb9dad94570ba9659e9bbd7f1e37ce}{\+\_\+\+Stone\+Type}} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em 문자열로 Stone\+Type 생성 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\mbox{[}파일 개요\mbox{]} 오목 프로그램 객체를 관리(설정, 생성, 변환, 제거 등)하는 함수를 선언함
+
+\mbox{[}함수 종류\mbox{]} 생성 \+\_\+객체() 설정 set\+\_\+객체() 변환 변환할객체\+\_\+to\+\_\+변환될객체() (아래는 \textquotesingle{}동적 할당이 필요한 멤버\textquotesingle{}가 있는 객체인 경우) 동적 생성 new\+\_\+객체() 복사 copy\+\_\+객체() 제거 delete\+\_\+객체()
+
+\mbox{[}객체 생성(\+\_\+) 함수\mbox{]} 객체 생성 계열 함수는 객체 멤버 변수와 일대일 대응 되는 주어진 인자를 통해 객체를 생성해 반환하는 역할을 담당함 \textquotesingle{}동적 할당이 필요한 멤버\textquotesingle{}가 있는 객체는 반드시 객체 사용 후 해당 객체의 delete 함수를 호출해야 함
+
+이름 \+: \+\_\+객체() 매개변수 \+: 설정값(멤버 변수와 일대일 대응) 반환값 \+: 생성된 객체 반환
+
+\mbox{[}객체 설정(set) 함수\mbox{]} 객체 설정 계열 함수는 객체를 주어진 인자로 설정하는 역할을 담당함 \textquotesingle{}동적 할당이 필요한 멤버\textquotesingle{}가 있는 객체는 반드시 객체 사용 후 delete 함수를 호출해야 함
+
+이름 \+: set\+\_\+객체() 첫 매개변수 \+: 설정할 객체의 주소값 그 외 매개변수 \+: 설정값(멤버 변수와 일대일 대응) 반환값 \+: 설정이 잘 이루어졌으면 1, 그렇지 않으면 0을 반환
+
+\mbox{[}객체 변환({\itshape to}) 함수\mbox{]} 객체 변환 계열 함수는 변환할객체를 변환될객체로 변환하는 역할을 담당함 이때 객체 복사가 수행되며 복사된 객체가 리턴됨
+
+이름 \+: 변환할객체\+\_\+to\+\_\+변환된객체() 첫 매개변수 \+: 변환할객체의 주소값 그 외 매개변수 \+: 없음 반환값 \+: 지역변수 형태의 변환된객체(변환될객체가 \textquotesingle{}동적 할당이 필요한 멤버\textquotesingle{}가 있을 경우 깊은 복사 수행됨)
+
+\mbox{[}객체 동적 생성(new) 함수\mbox{]} 객체 동적 생성 계열 함수는 객체를 주어진 인자로 동적 생성하는 역할을 담당함 동적 할당된 객체의 주소가 리턴됨
+
+이름 \+: 변환할객체\+\_\+to\+\_\+변환된객체() 매개변수 \+: 설정값(멤버 변수와 일대일 대응) 반환값 \+: 설정값으로 초기화된 동적 할당된 객체의 주소값
+
+\mbox{[}객체 복사(copy) 함수\mbox{]} 객체 복사 계열 함수는 \textquotesingle{}동적 할당이 필요한 멤버\textquotesingle{}가 필요한 객체에서 정의되며 객체의 내용을 같은 타입의 객체에 \textquotesingle{}깊은 복사(deep copy)\textquotesingle{}하는 역할을 담당함
+
+이름 \+: copy\+\_\+객체() 첫 매개변수 \+: 복사할 객체의 주소값 그 외 매개변수 \+: 없음 반환값 \+: 지역 변수 형태의 복사된 객체
+
+\mbox{[}객체 제거(delete) 함수\mbox{]} 객체 제거 계열 함수는 \textquotesingle{}동적 할당이 필요한 멤버\textquotesingle{}가 있는 객체에서 정의되며 객체가 \textquotesingle{}객체 생성 또는 설정 함수\textquotesingle{}를 통해 동적 할당 된 후 더 이상 코드에서 사용하지 않을 때 동적 할당된 메모리를 해제하는 역할을 담당함
+
+이름 \+: delete\+\_\+객체() 첫 매개변수 \+: 제거할 객체의 주소값 그 외 매개변수 \+: 없음 반환값 \+: 객체 제거가 성공하면 1, 실패하거나 객체 내부 동적 할당 메모리 포인터가 N\+U\+L\+L인 경우 0을 반환 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{omokobj__manage_8h_aeb3390135ccc20f23dea361f39815fac}\label{omokobj__manage_8h_aeb3390135ccc20f23dea361f39815fac}} 
+\index{omokobj\_manage.h@{omokobj\_manage.h}!\_OmokCoord@{\_OmokCoord}}
+\index{\_OmokCoord@{\_OmokCoord}!omokobj\_manage.h@{omokobj\_manage.h}}
+\doxysubsubsection{\texorpdfstring{\_OmokCoord()}{\_OmokCoord()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} \+\_\+\+Omok\+Coord (\begin{DoxyParamCaption}\item[{char}]{row,  }\item[{short}]{col }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} 생성 
+
+
+\begin{DoxyParams}{Parameters}
+{\em char} & row \+: 생성할 객체의 행 정보, 범위\+: \textquotesingle{}A\textquotesingle{} $\sim$ \textquotesingle{}Z\textquotesingle{}, 인자가 잘못되면 \textquotesingle{}\textbackslash{}0\textquotesingle{}으로 초기화 \\
+\hline
+{\em short} & col \+: 생성할 객체의 열 정보, 범위\+: 1 $\sim$ 19, 인자가 잘못되면 0으로 초기화 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} \+: 생성된 객체
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+lja3723 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/11-\/25 12\+:10 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\mbox{\Hypertarget{omokobj__manage_8h_a3dfb9dad94570ba9659e9bbd7f1e37ce}\label{omokobj__manage_8h_a3dfb9dad94570ba9659e9bbd7f1e37ce}} 
+\index{omokobj\_manage.h@{omokobj\_manage.h}!\_StoneType@{\_StoneType}}
+\index{\_StoneType@{\_StoneType}!omokobj\_manage.h@{omokobj\_manage.h}}
+\doxysubsubsection{\texorpdfstring{\_StoneType()}{\_StoneType()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{omokobj_8h_a4e67486a2a6595637db872aa78fd2ce0}{Stone\+Type}} \+\_\+\+Stone\+Type (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+문자열로 Stone\+Type 생성 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & char$\ast$ str \+: 생성할 Stone\+Type에 해당하는 문자열(\char`\"{}w\char`\"{}, \char`\"{}\+W\char`\"{}, \char`\"{}white\char`\"{}, \char`\"{}\+White\char`\"{}, \char`\"{}b\char`\"{}, \char`\"{}\+B\char`\"{}, \char`\"{}black\char`\"{}, \char`\"{}\+Black\char`\"{}) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Stone\+Type \+: Black 또는 White 반환, 변환 오류시 E\+R\+R\+\_\+\+ST 반환
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+lja3723 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/11-\/25 01\+:25 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\mbox{\Hypertarget{omokobj__manage_8h_ab811bb4cf742428a2bbb5c093ba921d1}\label{omokobj__manage_8h_ab811bb4cf742428a2bbb5c093ba921d1}} 
+\index{omokobj\_manage.h@{omokobj\_manage.h}!set\_OmokCoord@{set\_OmokCoord}}
+\index{set\_OmokCoord@{set\_OmokCoord}!omokobj\_manage.h@{omokobj\_manage.h}}
+\doxysubsubsection{\texorpdfstring{set\_OmokCoord()}{set\_OmokCoord()}}
+{\footnotesize\ttfamily void set\+\_\+\+Omok\+Coord (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} $\ast$}]{obj,  }\item[{char}]{row,  }\item[{short}]{col }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} 설정 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Omok\+Coord$\ast$} & obj \+: 설정할 객체의 주소값 \\
+\hline
+{\em char} & row \+: 설정할 행 정보, 범위\+: \textquotesingle{}A\textquotesingle{} $\sim$ \textquotesingle{}Z\textquotesingle{}, 인자가 잘못되면 \textquotesingle{}\textbackslash{}0\textquotesingle{}으로 초기화 \\
+\hline
+{\em short} & col \+: 설정할 열 정보, 범위\+: 1 $\sim$ 19, 인자가 잘못되면 0으로 초기화\\
+\hline
+\end{DoxyParams}
+\begin{DoxyAuthor}{Author}
+lja3723 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/11-\/25 01\+:10 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
+\mbox{\Hypertarget{omokobj__manage_8h_a548cab5293e4d42fd323ff4bf71c27ba}\label{omokobj__manage_8h_a548cab5293e4d42fd323ff4bf71c27ba}} 
+\index{omokobj\_manage.h@{omokobj\_manage.h}!Str\_to\_OmokCoord@{Str\_to\_OmokCoord}}
+\index{Str\_to\_OmokCoord@{Str\_to\_OmokCoord}!omokobj\_manage.h@{omokobj\_manage.h}}
+\doxysubsubsection{\texorpdfstring{Str\_to\_OmokCoord()}{Str\_to\_OmokCoord()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} Str\+\_\+to\+\_\+\+Omok\+Coord (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+문자열을 Omok\+Coord로 변환 
+
+
+\begin{DoxyParams}{Parameters}
+{\em const} & char$\ast$ str \+: 형식은 \char`\"{}a19\char`\"{} 또는 \char`\"{}\+A19\char`\"{}이어야 하며, 인자가 잘못되면 row는 \textquotesingle{}\textbackslash{}0\textquotesingle{}, col은 0으로 초기화 \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{\hyperlink{struct_omok_coord}{Omok\+Coord}} \+: 생성된 객체 반환
+\end{DoxyReturn}
+\begin{DoxyAuthor}{Author}
+lja3723 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2020-\/11-\/25 12\+:20 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+0.\+0.\+1 
+\end{DoxyVersion}
