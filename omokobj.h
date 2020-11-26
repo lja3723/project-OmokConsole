@@ -36,7 +36,7 @@
 * @date		2020-11-24	18:00
 * @version	0.0.1 
 */
-typedef struct _OMOKCOORD {
+typedef struct {
 	char row;	/* 행 정보 */
 	short col;	/* 열 정보 */
 } OmokCoord;
@@ -52,7 +52,7 @@ typedef struct _OMOKCOORD {
 * @date		2020-11-24	18:05
 * @version	0.0.1
 */
-typedef enum _STONETYPE {
+typedef enum {
 	Black = 0,		/* 흑색 오목알 */
 	White = 1,		/* 백색 오목알 */
 	ERR_ST = -1		/* 에러 발생 */
@@ -69,7 +69,7 @@ typedef enum _STONETYPE {
 * @date		2020-11-24	18:10
 * @version	0.0.1
 */
-typedef struct _OMOKCURSOR {
+typedef struct {
 	OmokCoord locate;	/* 커서의 위치 */
 	StoneType type;		/* 커서가 표현하는 오목알 타입(Black, White) */
 } OmokCursor;
@@ -85,7 +85,7 @@ typedef struct _OMOKCURSOR {
 * @date		2020-11-24	18:10
 * @version	0.0.1
 */
-typedef struct _STONE {
+typedef struct {
 	OmokCoord locate;	/* 오목알의 위치 */
 	StoneType type;		/* 오목알 타입(Black, White) */
 } Stone;
@@ -101,7 +101,7 @@ typedef struct _STONE {
 * @date		2020-11-24	21:40
 * @version	0.0.1
 */
-typedef struct _STONENODE {
+typedef struct {
 	Stone stone;				/* 오목알 정보 */
 	struct _STONENODE* next;	/* 다음 오목알 노드를 가리키는 포인터 */
 } StoneNode;
@@ -118,7 +118,7 @@ typedef struct _STONENODE {
 * @date		2020-11-24	21:40
 * @version	0.0.1
 */
-typedef struct _STONESTORAGE {
+typedef struct {
 	StoneNode** header;	/* 동적할당으로 구현된 StoneNode 포인터 배열: 행 표현 */
 	int size;			/* 포인터 배열의 크기 */
 } StoneStorage;
@@ -134,7 +134,7 @@ typedef struct _STONESTORAGE {
 * @date		2020-11-24	20:20
 * @version	0.0.1
 */
-typedef enum _OMOKPANELTYPE {
+typedef enum {
 	regular	= 15,	/* 레귤러(15*15) 오목판 */
 	jumbo	= 19,	/* 점보(19*19) 오목판 */
 	ERR_OPT	= -1	/* 에러 발생 */
@@ -151,7 +151,7 @@ typedef enum _OMOKPANELTYPE {
 * @date		2020-11-24	20:10
 * @version	0.0.1
 */
-typedef struct _OMOKPANEL {
+typedef struct {
 	OmokPanelType type;		/* 오목판 타입(regular, jumbo) */
 	StoneStorage storage;	/* 오목알 저장 객체 */
 } OmokPanel;
@@ -167,7 +167,7 @@ typedef struct _OMOKPANEL {
 * @date		2020-11-24	20:30
 * @version	0.0.1
 */
-typedef struct _OMOKSTATUS {
+typedef struct {
 	StoneType who_is_turn;		/* 착수 차례(Black, White) */
 	int	turns;					/* 착수 횟수 */
 	OmokCoord prev_put_locate;	/* 바로 전 착수한 좌표 정보 */
@@ -184,7 +184,7 @@ typedef struct _OMOKSTATUS {
 * @date		2020-11-24	20:40
 * @version	0.0.1
 */
-typedef struct _OMOK {
+typedef struct {
 	OmokCursor cursor;	/* 오목판 커서 */
 	OmokPanel panel;	/* 오목판 */
 	OmokStatus status;	/* 게임 진행 현황 */
