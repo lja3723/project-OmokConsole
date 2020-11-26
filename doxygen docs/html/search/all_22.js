@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['커서_77',['커서',['../readme_8txt.html#a7ad9af47ef6893120baa16bf9239efae',1,'readme.txt']]]
+  ['커서_77',['커서',['../readme_8txt.html#a08d681cbe78d229b306cc132a920442b',1,'readme.txt']]]
 ];
