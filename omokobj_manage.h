@@ -108,8 +108,8 @@
 * @param short col		: 생성할 객체의 열 정보, 범위: 1 ~ 19, 인자가 잘못되면 0으로 초기화
 * @return OmokCoord		: 생성된 객체
 *
-* @author lja3723
-* @date 2020-11-25 12:10
+* @author daol
+* @date 2020-11-27 02:27
 * @version 0.0.1
 */
 OmokCoord _OmokCoord(char row, short col);
@@ -121,8 +121,8 @@ OmokCoord _OmokCoord(char row, short col);
 * @param char row		: 설정할 행 정보, 범위: 'A' ~ 'Z', 인자가 잘못되면 '\\0'으로 초기화
 * @param short col		: 설정할 열 정보, 범위: 1 ~ 19, 인자가 잘못되면 0으로 초기화
 *
-* @author lja3723
-* @date 2020-11-25 01:10
+* @author daol
+* @date 2020-11-27 02:27
 * @version 0.0.1
 */
 void set_OmokCoord(OmokCoord* obj, char row, short col);
@@ -133,8 +133,8 @@ void set_OmokCoord(OmokCoord* obj, char row, short col);
 * @param const char* str	: 형식은 "a19" 또는 "A19"이어야 하며, 인자가 잘못되면 row는 '\\0', col은 0으로 초기화
 * @return OmokCoord			: 생성된 객체 반환
 *
-* @author lja3723
-* @date 2020-11-25 12:20
+* @author daol
+* @date 2020-11-27 02:27
 * @version 0.0.1
 */
 OmokCoord Str_to_OmokCoord(const char* str);
@@ -152,8 +152,8 @@ OmokCoord Str_to_OmokCoord(const char* str);
 * @param const char* str	: 생성할 StoneType에 해당하는 문자열("w", "W", "white", "White", "b", "B", "black", "Black")
 * @return StoneType			: Black 또는 White 반환, 변환 오류시 ERR_ST 반환
 *
-* @author lja3723
-* @date 2020-11-25 01:25
+* @author daol
+* @date 2020-11-27 02:27
 * @version 0.0.1
 */
 StoneType _StoneType(const char* str);
@@ -172,9 +172,9 @@ StoneType _StoneType(const char* str);
 * @param StoneType type		: 생성되는 커서의 오목알 타입
 * @return OmokCursor		: 생성된 객체
 *
-* @author 
-* @date 
-* @version 
+* @author daol 
+* @date 2020-11-27 02:27
+* @version 0.0.1 
 */
 OmokCursor _OmokCursor(OmokCoord locate, StoneType type);
 
@@ -184,9 +184,9 @@ OmokCursor _OmokCursor(OmokCoord locate, StoneType type);
 * @param Stone *obj	: 변환할 Stone 객체의 주소값
 * @return			: 변환된 Cursor 객체
 *
-* @author
-* @date
-* @version
+* @author daol
+* @date 2020-11-27 02:27
+* @version 0.0.1
 */
 OmokCursor Stone_to_OmokCursor(Stone *obj);
 
@@ -198,11 +198,11 @@ OmokCursor Stone_to_OmokCursor(Stone *obj);
 * @param StoneType type		: 오목알 타입 설정값
 * @return int				: 잘 설정되면 1, 그렇지 않으면 0 반환
 *
-* @author
-* @date
-* @version
+* @author daol
+* @date 2020-11-27 02:28
+* @version 0.0.1
 */
-int set_OmokCursor(OmokCursor *obj, OmokCoord locate, StoneType type);
+void set_OmokCursor(OmokCursor *obj, OmokCoord locate, StoneType type);
 
 
 
@@ -218,8 +218,8 @@ int set_OmokCursor(OmokCursor *obj, OmokCoord locate, StoneType type);
 * @param StoneType type		: 생성될 오목알 종류
 * @return Stone				: 생성된 객체
 *
-* @author lja3723
-* @date 2020-11-27 00:20
+* @author daol
+* @date 2020-11-27 02:30
 * @version 0.0.1
 */
 Stone _Stone(OmokCoord locate, StoneType type);
@@ -232,11 +232,11 @@ Stone _Stone(OmokCoord locate, StoneType type);
 * @param StoneType type		: 설정할 오목알 종류
 * @return Stone				: 생성된 객체
 *
-* @author lja3723
-* @date 2020-11-27 00:20
+* @author daol
+* @date 2020-11-27 02:30
 * @version 0.0.1
 */
-int set_Stone(Stone* obj, OmokCoord locate, StoneType type);
+void set_Stone(Stone* obj, OmokCoord locate, StoneType type);
 
 /** 
 * @fn Stone OmokCursor_to_Stone(OmokCursor* obj);
@@ -244,15 +244,15 @@ int set_Stone(Stone* obj, OmokCoord locate, StoneType type);
 * @param OmokCursor* obj	: 변환할 OmokCursor의 주소값
 * @return Stone				: 변환된 Stone 객체
 *
-* @author
-* @date
-* @version
+* @author daol
+* @date 2020-11-27 02:30
+* @version 0.0.1
 */
 Stone OmokCursor_to_Stone(OmokCursor* obj);
 
 
 
-/*******************************************************************
+/*******************************************************************
 *					StoneNode management
 * 생성(_) 설정(set)
 * 동적 생성(new)
@@ -281,7 +281,7 @@ StoneNode _StoneNode(Stone stone, struct _STONENODE* next);
 * @date
 * @version
 */
-int Set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
+void Set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
 
 /**
 * @fn
@@ -367,7 +367,7 @@ OmokStatus _OmokStatus(StoneType whose_turn, int turns, OmokCoord prev_put_locat
 * @date
 * @version
 */
-int set_OmokStatus(OmokStatus* obj, StoneType whose_turn, int turns, OmokCoord prev_put_locate);
+void set_OmokStatus(OmokStatus* obj, StoneType whose_turn, int turns, OmokCoord prev_put_locate);
 
 
 
