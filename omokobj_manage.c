@@ -2,6 +2,7 @@
 #include <ctype.h>
 #include <string.h>
 #include <stdlib.h>
+
 /**
 * @file omokobj_manage.c
 */
@@ -30,7 +31,6 @@ void set_OmokCoord(OmokCoord* obj, char row, short col)
 		obj->col = col;
 	else
 		obj->col = 0;
-
 }
 
 OmokCoord Str_to_OmokCoord(const char* str)
@@ -53,5 +53,45 @@ OmokCoord Str_to_OmokCoord(const char* str)
 	else
 		obj.col = 0;
 	return obj;
+	
+}
+
+StoneType _StoneType(const char* str)
+{
+	StoneType obj = ERR_ST;
+	char* valid_arg[] = {
+		"w", "W", "white", "White", "B", "b", "black", "Black"
+	};
+
+	for (int i = 0; i < 8; i++)	
+	{
+		if (strcmp(str, valid_arg[i]) == 0) 
+		{
+			obj = i < 4 ? White : Black;
+			break;
+		}
+	}
+
+	return obj;
+}
+
+OmokCursor _OmokCursor(OmokCoord locate, StoneType type)
+{
+	OmokCursor obj;
+	obj.locate = locate;
+	obj.type = type;
+	return obj;
+}
+
+OmokCursor Stone_to_OmokCursor(Stone* obj)
+{
+	OmokCursor result;
+	result.locate = obj->locate;
+	result.type = obj->type;
+	return result;
+}
+
+int set_OmokCursor(OmokCursor* obj, OmokCoord locate, StoneType type)
+{
 	
 }
