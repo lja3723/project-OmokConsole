@@ -152,9 +152,11 @@ StoneType _StoneType(const char* str);
 *					OmokCursor management
 * 생성(_) 설정(set) 변환(Stone|_to_)
 ********************************************************************/
+OmokCursor _OmokCursor(OmokCoord locate, StoneType type);
 
+OmokCursor Stone_to_OmokCursor(Stone *obj);
 
-
+int set_OmokCursor(OmokCursor *obj, OmokCoord locate, StoneType type);
 
 
 
@@ -196,13 +198,16 @@ Stone OmokCursor_to_Stone(OmokCursor* obj);
 
 
 
-/*******************************************************************
+/*******************************************************************
 *					StoneNode management
 * 생성(_) 설정(set)
 * 동적 생성(new)
 * 복사(copy) 제거(delete)
 ********************************************************************/
 
+StoneNode _StoneNode(Stone stone, struct _STONENODE* next);
+
+int Set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
 
 
 //StoneNote* 
@@ -227,7 +232,7 @@ Stone OmokCursor_to_Stone(OmokCursor* obj);
 * 생성(_)
 ********************************************************************/
 
-
+OmokPanelType _OmokPanelType(const char *str);
 
 
 
@@ -248,9 +253,9 @@ Stone OmokCursor_to_Stone(OmokCursor* obj);
 * 생성(_) 설정(set)
 ********************************************************************/
 
+OmokStatus _OmokStatus(StoneType whose_turn, int turns, OmokCoord prev_put_locate);
 
-
-
+int set_OmokStatus(OmokStatus* obj, StoneType whose_turn, int turns, OmokCoord prev_put_locate);
 
 
 

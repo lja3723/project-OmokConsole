@@ -189,7 +189,7 @@ typedef struct {
 * @brief	게임 진행 현황 객체
 * @details	착수 차례(오목알 정보 객체), 착수 횟수, 착수 좌표정보를 표현
 * 
-* @var StoneType who_is_turn		: 착수 차례(Black, White)
+* @var StoneType whose_turn		: 착수 차례(Black, White)
 * @var int turns					: 착수 횟수
 * @var OmokCoord prev_put_locate	: 바로 전 착수한 좌표 정보
 *
@@ -198,7 +198,7 @@ typedef struct {
 * @version	0.0.1
 */
 typedef struct {
-	StoneType who_is_turn;		/* 착수 차례(Black, White) */
+	StoneType whose_turn;		/* 착수 차례(Black, White) */
 	int	turns;					/* 착수 횟수 */
 	OmokCoord prev_put_locate;	/* 바로 전 착수한 좌표 정보 */
 } OmokStatus;
