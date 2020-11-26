@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['jumbo_186',['jumbo',['../omokobj_8h.html#ac11d4b0ff7b50fa597070dd3485e864eab4bfb6d519635d5ccb90cdff602896ee',1,'omokobj.h']]]
+  ['jumbo_160',['jumbo',['../omokobj_8h.html#afe6e0a187c72931175c1f57169fc2ec8ab4bfb6d519635d5ccb90cdff602896ee',1,'omokobj.h']]]
 ];
