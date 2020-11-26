@@ -81,6 +81,18 @@
 * 반환값				: 객체 제거가 성공하면 1, 실패하거나 객체 내부 동적 할당 메모리 포인터가 NULL인 경우 0을 반환
 */ 
 
+//양식
+/**
+* @fn
+* @brief
+* @param
+* @return
+*
+* @author
+* @date
+* @version
+*/
+
 /********************************* 본문 *************************************/
 
 
@@ -152,10 +164,44 @@ StoneType _StoneType(const char* str);
 *					OmokCursor management
 * 생성(_) 설정(set) 변환(Stone|_to_)
 ********************************************************************/
+
+/**
+* @fn OmokCursor _OmokCursor(OmokCoord locate, StoneType type);
+* @brief OmokCursor 객체 생성
+* @param OmokCoord locate	: 생성되는 커서의 좌표
+* @param StoneType type		: 생성되는 커서의 오목알 타입
+* @return OmokCursor		: 생성된 객체
+*
+* @author 
+* @date 
+* @version 
+*/
 OmokCursor _OmokCursor(OmokCoord locate, StoneType type);
 
+/** 
+* @fn OmokCursor Stone_to_OmokCursor(Stone *obj);
+* @brief Stone 객체를 OmokCursor로 변환
+* @param Stone *obj	: 변환할 Stone 객체의 주소값
+* @return			: 변환된 Cursor 객체
+*
+* @author
+* @date
+* @version
+*/
 OmokCursor Stone_to_OmokCursor(Stone *obj);
 
+/**
+* @fn int set_OmokCursor(OmokCursor *obj, OmokCoord locate, StoneType type);
+* @brief OmokCursor 설정
+* @param OmokCursor *obj	: 설정할 객체의 주소값
+* @param OmokCoord locate	: 좌표 설정값
+* @param StoneType type		: 오목알 타입 설정값
+* @return int				: 잘 설정되면 1, 그렇지 않으면 0 반환
+*
+* @author
+* @date
+* @version
+*/
 int set_OmokCursor(OmokCursor *obj, OmokCoord locate, StoneType type);
 
 
@@ -192,8 +238,16 @@ Stone _Stone(OmokCoord locate, StoneType type);
 */
 int set_Stone(Stone* obj, OmokCoord locate, StoneType type);
 
-
-
+/** 
+* @fn Stone OmokCursor_to_Stone(OmokCursor* obj);
+* @brief OmokCursor 객체를 Stone 객체로 변환
+* @param OmokCursor* obj	: 변환할 OmokCursor의 주소값
+* @return Stone				: 변환된 Stone 객체
+*
+* @author
+* @date
+* @version
+*/
 Stone OmokCursor_to_Stone(OmokCursor* obj);
 
 
@@ -205,13 +259,41 @@ Stone OmokCursor_to_Stone(OmokCursor* obj);
 * 복사(copy) 제거(delete)
 ********************************************************************/
 
+/**
+* @fn StoneNode _StoneNode(Stone stone, struct _STONENODE* next);
+* @brief
+* @param
+* @return
+*
+* @author
+* @date
+* @version
+*/
 StoneNode _StoneNode(Stone stone, struct _STONENODE* next);
 
+/**
+* @fn int Set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
+* @brief
+* @param
+* @return
+*
+* @author
+* @date
+* @version
+*/
 int Set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
 
-
+/**
+* @fn
+* @brief
+* @param
+* @return
+*
+* @author
+* @date
+* @version
+*/
 //StoneNote* 
-
 
 
 
@@ -232,6 +314,16 @@ int Set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
 * 생성(_)
 ********************************************************************/
 
+/**
+* @fn OmokPanelType _OmokPanelType(const char *str);
+* @brief
+* @param
+* @return
+*
+* @author
+* @date
+* @version
+*/
 OmokPanelType _OmokPanelType(const char *str);
 
 
@@ -253,8 +345,28 @@ OmokPanelType _OmokPanelType(const char *str);
 * 생성(_) 설정(set)
 ********************************************************************/
 
+/**
+* @fn OmokStatus _OmokStatus(StoneType whose_turn, int turns, OmokCoord prev_put_locate);
+* @brief
+* @param
+* @return
+*
+* @author
+* @date
+* @version
+*/
 OmokStatus _OmokStatus(StoneType whose_turn, int turns, OmokCoord prev_put_locate);
 
+/**
+* @fn int set_OmokStatus(OmokStatus* obj, StoneType whose_turn, int turns, OmokCoord prev_put_locate);
+* @brief
+* @param
+* @return
+*
+* @author
+* @date
+* @version
+*/
 int set_OmokStatus(OmokStatus* obj, StoneType whose_turn, int turns, OmokCoord prev_put_locate);
 
 
