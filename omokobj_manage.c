@@ -91,7 +91,7 @@ OmokCursor Stone_to_OmokCursor(Stone* obj)
 	return result;
 }
 
-int set_OmokCursor(OmokCursor* obj, OmokCoord locate, StoneType type)
+void set_OmokCursor(OmokCursor* obj, OmokCoord locate, StoneType type)
 {
 	
 }
