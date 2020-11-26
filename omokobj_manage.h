@@ -163,8 +163,36 @@ StoneType _StoneType(const char* str);
 *  생성(_) 설정(set) 변환(OmokCursor|_to_)
 ********************************************************************/
 
+/**
+* @fn _Stone(OmokCoord locate, StoneType type);
+* @brief Stone 객체 생성
+* @param OmokCoord locate	: 생성될 오목알의 좌표
+* @param StoneType type		: 생성될 오목알 종류
+* @return Stone				: 생성된 객체
+*
+* @author lja3723
+* @date 2020-11-27 00:20
+* @version 0.0.1
+*/
+Stone _Stone(OmokCoord locate, StoneType type);
+
+/**
+* @fn set_Stone(Stone* obj, OmokCoord locate, StoneType type);
+* @brief Stone 객체 생성
+* @param Stone* obj			: 설정할 객체
+* @param OmokCoord locate	: 설정할 오목알의 좌표
+* @param StoneType type		: 설정할 오목알 종류
+* @return Stone				: 생성된 객체
+*
+* @author lja3723
+* @date 2020-11-27 00:20
+* @version 0.0.1
+*/
+int set_Stone(Stone* obj, OmokCoord locate, StoneType type);
 
 
+
+Stone OmokCursor_to_Stone(OmokCursor* obj);
 
 
 
@@ -175,6 +203,9 @@ StoneType _StoneType(const char* str);
 * 복사(copy) 제거(delete)
 ********************************************************************/
 
+
+
+//StoneNote* 
 
 
 
