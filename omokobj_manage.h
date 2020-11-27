@@ -24,8 +24,7 @@
 *	(아래는 '동적 할당이 필요한 멤버'가 있는 객체인 경우)
 * 동적 생성		new_객체()
 * 동적 제거		free_객체()
-* 복사			copy_객체()
-* 제거			delete_객체()
+* 깊은 복사		deepcopy_객체()
 * 
 * < ! >
 * 공통 함수 이외에, 각 객체에 특화된 manage 함수가 존재할 수 있음
@@ -100,25 +99,14 @@
 * 반환값				: 동적 할당 해제 성공 시 1, 그렇지 않으면 0 반환
 * 
 * 
-* [객체 복사(copy) 함수]
-* 객체 복사 계열 함수는 '동적 할당이 필요한 멤버'가 필요한 객체에서 정의되며
+* [객체 깊은 복사(copy) 함수]
+* 객체 깊은 복사 계열 함수는 '동적 할당이 필요한 멤버'가 필요한 객체에서 정의되며
 * 객체의 내용을 같은 타입의 객체에 '깊은 복사(deep copy)'하는 역할을 담당함
 *
-* 이름				: copy_객체()
+* 이름				: deepcopy_객체()
 * 첫 매개변수		: 복사할 객체의 주소값
 * 그 외 매개변수		: 없음
-* 반환값				: 지역 변수 형태의 복사된 객체
-*
-* 
-* [객체 제거(delete) 함수]
-* 객체 제거 계열 함수는 '동적 할당이 필요한 멤버'가 있는 객체에서 정의되며
-* 객체가 '객체 생성 또는 설정 함수'를 통해 동적 할당 된 후 더 이상 코드에서 사용하지 않을 때 
-* 동적 할당된 메모리를 해제하는 역할을 담당함
-* 
-* 이름				: delete_객체()
-* 첫 매개변수		: 제거할 객체의 주소값
-* 그 외 매개변수		: 없음
-* 반환값				: 객체 제거가 성공하면 1, 실패하거나 객체 내부 동적 할당 메모리 포인터가 NULL인 경우 0을 반환
+* 반환값				: 깊은 복사된 동적 할당 객체, 깊은 복사 실패 시 NULL 반환
 */ 
 
 //양식
@@ -365,15 +353,17 @@ Stone OmokCursor_to_Stone(OmokCursor* obj);
 
 
 /*******************************************************************
-* TODO:	
+* TODO:	Done
 *					StoneNode management
 * 생성(_) 설정(set)
-* 동적 생성(new) 동적 해제(free)
-* 복사(copy) 제거(delete)
+* 동적 생성(new) 동적 해제(free) 
+* next 노드 분리(detach_nextStoneNode)
+* next 노드 연결(connect_nextStoneNode)
+* 깊은 복사(deepcopy)
 ********************************************************************/
 
 /**
-* @fn StoneNode _StoneNode(Stone stone, struct _STONENODE* next);
+* @fn StoneNode _StoneNode(Stone stone, StoneNode* next);
 * @brief StoneNode 객체 생성(동적 할당 없음)
 * @param Stone stone				: 생성될 객체의 Stone 정보
 * @param struct _STONENODE* next	: 생성될 객체의 next 정보
@@ -386,27 +376,28 @@ Stone OmokCursor_to_Stone(OmokCursor* obj);
 StoneNode _StoneNode(Stone stone, StoneNode* next);
 
 /**
-* @fn int Set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
+* @fn void set_StoneNode(StoneNode* obj, Stone stone, StoneNode* next);
 * @brief StoneNode 객체 설정
-* @param Stone* obj					: 설정할 객체의 주소값
-* @param Stone stone				: 설정할 stone 정보
-* @param struct _STONENODE* next	: 설정할 next 정보
-* @return int						: 잘 설정되었으면 1, 그렇지 않으면 0 반환
+* @param Stone* obj			: 설정할 객체의 주소값
+* @param Stone stone		: 설정할 stone 정보
+* @param StoneNode* next	: 설정할 next 정보
+* @return void
 *
 * @author lja3723
 * @date 2020-11-27 18:50
 * @version 0.0.1
 */
-int set_StoneNode(Stone* obj, Stone stone, struct _STONENODE* next);
+void set_StoneNode(StoneNode* obj, Stone stone, StoneNode* next);
 
 /**
-* @fn StoneNode* new_StoneNode(Stone stone, StoneNode* next);
-* @brief StoneNode 객체를 동적 할당한 주소값을 반환.
+* @fn StoneNode* new_StoneNode(StoneNode obj);
+* @brief obj 정보로 초기화한 동적 할당된 객체 주소값을 반환(단 동적할당 실패시 NULL 반환).
 *		이 함수로 받은 주소값은 메모리 누수를 방지하기 위해 반드시
-*		사용 후 free_StoneNode의 인자로 전달해야함
+*		사용 후 free_StoneNode의 인자로 전달해야함.
+*		<!주의> 반환된 객체는 얕은 복사된 상태임
 * @param Stone stone		: 동적 생성될 객체의 Stone 정보
 * @param StoneNode* next	: 동적 생성될 객체의 next 정보
-* @return StoneNode*		: 동적 생성된 객체의 주소값
+* @return StoneNode*		: 동적 생성된 객체의 주소값, 동적 할당 실패시 NULL 반환
 *
 * @author lja3723
 * @date 2020-11-27 18:50
@@ -416,7 +407,10 @@ StoneNode* new_StoneNode(StoneNode obj);
 
 /**
 * @fn int free_StoneNode(StoneNode* obj);
-* @brief 동적 할당된 StoneNode 객체를 해제하는 역할을 함
+* @brief 동적 할당된 StoneNode 객체를 해제하는 역할을 함.
+*		<!주의> NextNode에 동적 할당 객체가 연결되어 있으면 재귀적으로 해제되며, 
+		obj을 가리키는 또 다른 StoneNode 객체가 없어야 함
+* 
 * @param StoneNode* obj	: 동적 해제하려는 StoneNode 객체의 주소값
 * @return int			: 정상 해제되었으면 1, 그렇지 않으면 0을 반환
 *
@@ -427,31 +421,46 @@ StoneNode* new_StoneNode(StoneNode obj);
 int free_StoneNode(StoneNode* obj);
 
 /**
-* @fn StoneNode copy_StoneNode(StoneNode* obj);
-* @brief StoneNode 객체를 깊은 복사함.
-*		StoneNode 객체의 다음 노드 포인터에 연결된 객체까지 모두 깊은 복사함
-* @param StoneNode* obj	: 깊은 복사할 StoneNode 객체
-* @return StoneNode		: 깊은 복사된 객체 반환
+* @fn StoneNode* detach_nextStoneNode(StoneNode* obj);
+* @brief 인자로 전달된 객체의 nextNode를 분리 후, 분리된 nextNode의 주소값 반환.
+*		분리후 obj의 nextNode는 NULL임
+* @param StoneNode* obj	: nextNode를 분리하려는 객체의 주소값
+* @return StoneNode*	: 분리된 nextNode의 주소값
 *
 * @author lja3723
-* @date 2020-11-27 18:50
+* @date 2020-11-27 21:40
 * @version 0.0.1
 */
-StoneNode copy_StoneNode(StoneNode* obj);
+StoneNode* detach_nextStoneNode(StoneNode* obj);
 
 /**
-* @fn int delete_StoneNode(StoneNode* obj);
-* @brief StoneNode 객체를 안전하게 제거함.
-*	next에 연결되어 있는 모든 동적 할당된 StoneNode를 재귀적으로 제거함.
-* @param StoneNode* obj	: 제거하려는 객체의 주소값
-* @return int			: 잘 제거되었으면 1, 그렇지 않으면 0 반환
+* @fn StoneNode* connect_nextStoneNode(StoneNode* obj, StoneNode* target);
+* @brief 인자로 전달된 obj 객체의 next에 target 객체를 연결함.
+*		<!주의> obj의 next는 반드시 NULL이거나 free가 되지 않은 동적 객체어야 하고, 
+				target은 반드시 동적 할당된 객체여야 함.
+* @param StoneNode* obj		: target을 가리키고자 하는 StoneNode 객체
+* @param StoneNode* target	: obj의 nextNode에 연결될 목표 객체
+* @return int				: 연결이 성공하면 1, 그렇지 않으면 0 반환
 *
 * @author lja3723
-* @date 2020-11-27 18:50
+* @date 2020-11-27 22:15
 * @version 0.0.1
 */
-int delete_StoneNode(StoneNode* obj);
+int connect_nextStoneNode(StoneNode* obj, StoneNode* target);
 
+/**
+* @fn StoneNode copy_StoneNode(StoneNode* obj);
+* @brief 동적 할당된 obj 깊은 복사함. 이때
+		obj의 nextNode가 동적 할당 객체라면 재귀적으로 깊은 복사함
+* @param StoneNode* obj	: 깊은 복사할 동적 할당된 StoneNode 객체
+* @return StoneNode		: 깊은 복사 성공지 깊은 복사된 객체 반환, 
+		깊은 복사 실패하거나 obj가 동적 할당된 객체가 아니면 NULL 반환
+*
+* @author lja3723
+* @date 2020-11-27 23:30
+* @version 0.0.1
+*/
+StoneNode* deepcopy_StoneNode(StoneNode* obj);
 
 
 /*******************************************************************
