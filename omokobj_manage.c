@@ -7,6 +7,11 @@
 * @file omokobj_manage.c
 */
 
+
+/**************************************************
+*			OmokCoord Management def
+***************************************************/
+
 OmokCoord _OmokCoord(char row, short col)
 {
 	OmokCoord obj;
@@ -23,17 +28,10 @@ OmokCoord _OmokCoord(char row, short col)
 
 void set_OmokCoord(OmokCoord* obj, char row, short col)
 {
-	if (isalpha(row))
-		obj->row = toupper(row);
-	else
-		obj->row = 0;
-	if (1 <= col && col <= 19)
-		obj->col = col;
-	else
-		obj->col = 0;
+	*obj = _OmokCoord(row, col);
 }
 
-OmokCoord Str_to_OmokCoord(const char* str)
+OmokCoord _sOmokCoord(const char* str)
 {
 	OmokCoord obj;
 	if (isalpha(str[0]))
@@ -56,7 +54,16 @@ OmokCoord Str_to_OmokCoord(const char* str)
 	
 }
 
-StoneType _StoneType(const char* str)
+void set_sOmokCoord(OmokCoord* obj, const char* set)
+{
+	*obj = _sOmokCoord(set);
+}
+
+/**************************************************
+*			StoneType Management def
+***************************************************/
+
+StoneType _sStoneType(const char* str)
 {
 	StoneType obj = ERR_ST;
 	char* valid_arg[] = {
@@ -75,12 +82,35 @@ StoneType _StoneType(const char* str)
 	return obj;
 }
 
+
+/**************************************************
+*			OmokCursor Management def
+***************************************************/
+
 OmokCursor _OmokCursor(OmokCoord locate, StoneType type)
 {
 	OmokCursor obj;
 	obj.locate = locate;
 	obj.type = type;
 	return obj;
+}
+
+void set_OmokCursor(OmokCursor* obj, OmokCoord locate, StoneType type)
+{
+	*obj = _OmokCursor(locate, type);
+}
+
+OmokCursor _sOmokCursor(const char* locate, const char* type)
+{
+	OmokCursor obj;
+	obj.locate = _sOmokCoord(locate);
+	obj.type = _sStoneType(type);
+	return obj;
+}
+
+void set_sOmokCursor(OmokCursor* obj, const char* locate, const char* type)
+{
+	*obj = _sOmokCursor(locate, type);
 }
 
 OmokCursor Stone_to_OmokCursor(Stone* obj)
@@ -91,12 +121,44 @@ OmokCursor Stone_to_OmokCursor(Stone* obj)
 	return result;
 }
 
-void set_OmokCursor(OmokCursor* obj, OmokCoord locate, StoneType type)
+
+/**************************************************
+*			Stone Management def
+***************************************************/
+
+Stone _Stone(OmokCoord locate, StoneType type)
 {
-	
+	Stone obj = { locate, type };
+	return obj;
 }
 
 void set_Stone(Stone* obj, OmokCoord locate, StoneType type)
 {
-
+	obj->locate = locate;
+	obj->type = type;
 }
+
+Stone _sStone(const char* locate, const char* type)
+{
+	Stone obj;
+	obj.locate = _sOmokCoord(locate);
+	obj.type = _sStoneType(type);
+	return obj;
+}
+
+void set_sStone(Stone* obj, const char* locate, const char* type)
+{
+	*obj = _sStone(locate, type);
+}
+
+Stone OmokCursor_to_Stone(OmokCursor* obj)
+{
+	Stone result;
+	result.locate = obj->locate;
+	result.type = obj->type;
+	return result;
+}
+
+/**************************************************
+*			StoneNode Management def
+***************************************************/

@@ -13,14 +13,19 @@
 * 
 * 
 *	[공통 함수 종류]
-* 생성		_객체()
-* 설정		set_객체()
-* 변환		변환할객체_to_변환될객체()
+* 생성			_객체()
+* 설정			set_객체()
+* 변환			변환할객체_to_변환될객체()
+* 
+*	(다음은 문자열로 생성, 설정하는 함수임)
+* 문자열로 생성	_s객체()
+* 문자열로 설정	set_s객체()
+* 
 *	(아래는 '동적 할당이 필요한 멤버'가 있는 객체인 경우)
-* 동적 생성	new_객체()
-* 동적 제거 free_객체()
-* 복사		copy_객체()
-* 제거		delete_객체()
+* 동적 생성		new_객체()
+* 동적 제거		free_객체()
+* 복사			copy_객체()
+* 제거			delete_객체()
 * 
 * < ! >
 * 공통 함수 이외에, 각 객체에 특화된 manage 함수가 존재할 수 있음
@@ -45,6 +50,24 @@
 * 이름				: set_객체()
 * 첫 매개변수		: 설정할 객체의 주소값
 * 그 외 매개변수		: 설정값(멤버 변수와 일대일 대응)
+* 반환값				: void
+* 
+* 
+* [객체 문자열로 생성(_s) 함수]
+* 객체를 알맞은 형식의 문자열로 생성
+* 
+* 이름				: _s객체()
+* 매개변수			: 알맞은 형식의 문자열
+* 반환값				: 생성된 객체 반환
+*
+* 
+* [객체 문자열로 설정(set_s) 함수]
+* 객체 설정 계열 함수는 객체를 주어진 인자로 설정하는 역할을 담당함
+* '동적 할당이 필요한 멤버'가 있는 객체는 반드시 객체 사용 후 delete 함수를 호출해야 함
+*
+* 이름				: set_s객체()
+* 첫 매개변수		: 설정할 객체의 주소값
+* 그 외 매개변수		: 알맞은 형식의 문자열
 * 반환값				: void
 *
 *
@@ -114,9 +137,10 @@
 
 
 /*****************************************************************
-* TODO:	
+* TODO:	없음
 *					OmokCoord management
-* 생성(_) 설정(set) 변환(Str|_to_)
+* 생성(_) 설정(set)
+* 문자열로 생성(_s) 문자열로 설정(set_s)
 ******************************************************************/
 
 /**
@@ -146,8 +170,8 @@ OmokCoord _OmokCoord(char row, short col);
 void set_OmokCoord(OmokCoord* obj, char row, short col);
 
 /**
-* @fn OmokCoord Str_to_OmokCoord(const char* str);
-* @brief 문자열을 OmokCoord로 변환
+* @fn OmokCoord _sOmokCoord(const char* str);
+* @brief 문자열로 OmokCoord 생성
 * @param const char* str	: 형식은 "a19" 또는 "A19"이어야 하며, 인자가 잘못되면 row는 '\\0', col은 0으로 초기화
 * @return OmokCoord			: 생성된 객체 반환
 *
@@ -155,14 +179,25 @@ void set_OmokCoord(OmokCoord* obj, char row, short col);
 * @date 2020-11-27 02:27
 * @version 0.0.1
 */
-OmokCoord Str_to_OmokCoord(const char* str);
+OmokCoord _sOmokCoord(const char* str);
 
-
+/**
+* @fn OmokCoord Str_to_OmokCoord(const char* str);
+* @brief 문자열로 OmokCoord 설정
+* @param OmokCoord* obj		: 설정할 OmokCoord 객체
+* @param const char* set	: 형식은 "a19" 또는 "A19"이어야 하며, 인자가 잘못되면 row는 '\\0', col은 0으로 초기화
+* @return					: void
+*
+* @author lja3723
+* @date 2020-11-27 20:10
+* @version 0.0.1
+*/
+void set_sOmokCoord(OmokCoord* obj, const char* set);
 
 /*******************************************************************
-* TODO:	
+* TODO: 없음
 *					StoneType management
-* 생성(_)
+* 문자열로 생성(_s)
 ********************************************************************/
 
 /**
@@ -175,14 +210,15 @@ OmokCoord Str_to_OmokCoord(const char* str);
 * @date 2020-11-27 02:27
 * @version 0.0.1
 */
-StoneType _StoneType(const char* str);
-
+StoneType _sStoneType(const char* str);
 
 
 /*******************************************************************
-* TODO:	
+* TODO:	없음
 *					OmokCursor management
-* 생성(_) 설정(set) 변환(Stone|_to_)
+* 생성(_) 설정(set) 
+* 문자열로 생성(_s) 문자열로 설정(set_s)
+변환(Stone|_to_)
 ********************************************************************/
 
 /**
@@ -198,18 +234,6 @@ StoneType _StoneType(const char* str);
 */
 OmokCursor _OmokCursor(OmokCoord locate, StoneType type);
 
-/** 
-* @fn OmokCursor Stone_to_OmokCursor(Stone *obj);
-* @brief Stone 객체를 OmokCursor로 변환
-* @param Stone *obj	: 변환할 Stone 객체의 주소값
-* @return			: 변환된 Cursor 객체
-*
-* @author daol
-* @date 2020-11-27 02:27
-* @version 0.0.1
-*/
-OmokCursor Stone_to_OmokCursor(Stone *obj);
-
 /**
 * @fn int set_OmokCursor(OmokCursor *obj, OmokCoord locate, StoneType type);
 * @brief OmokCursor 설정
@@ -222,7 +246,46 @@ OmokCursor Stone_to_OmokCursor(Stone *obj);
 * @date 2020-11-27 02:28
 * @version 0.0.1
 */
-void set_OmokCursor(OmokCursor *obj, OmokCoord locate, StoneType type);
+void set_OmokCursor(OmokCursor* obj, OmokCoord locate, StoneType type);
+
+/**
+* @fn OmokCursor _sOmokCursor(const char* locate, const char* type);
+* @brief 문자열으로 OmokCursor 객체 생성
+* @param const char* locate	: 문자열 형식의 좌표("a19", "A19")
+* @param const char* type	: 문자열 형식의 오목알 타입("W", "black" 등)
+* @return OmokCursor		: 생성된 객체
+*
+* @author lja3723
+* @date 2020-11-27 20:30
+* @version 0.0.1
+*/
+OmokCursor _sOmokCursor(const char* locate, const char* type);
+
+/**
+* @fn void set_sOmokCursor(OmokCursor* obj, const char* locate, const char* type);
+* @brief 문자열으로 OmokCursor 설정
+* @param OmokCursor *obj	: 설정할 객체의 주소값
+* @param OmokCoord locate	: 문자열 형식의 좌표 설정값("a19", "A19")
+* @param StoneType type		: 문자열 형식의 오목알 타입 설정값("W", "black" 등)
+* @return void
+*
+* @author lja3723
+* @date 2020-11-27 20:30
+* @version 0.0.1
+*/
+void set_sOmokCursor(OmokCursor* obj, const char* locate, const char* type);
+
+/** 
+* @fn OmokCursor Stone_to_OmokCursor(Stone *obj);
+* @brief Stone 객체를 OmokCursor로 변환
+* @param Stone *obj	: 변환할 Stone 객체의 주소값
+* @return			: 변환된 Cursor 객체
+*
+* @author daol
+* @date 2020-11-27 02:27
+* @version 0.0.1
+*/
+OmokCursor Stone_to_OmokCursor(Stone *obj);
 
 
 
@@ -230,8 +293,8 @@ void set_OmokCursor(OmokCursor *obj, OmokCoord locate, StoneType type);
 * TODO:	
 *					Stone management
 * 생성(_) 설정(set) 
+* 문자열로 생성(_s) 문자열로 설정(set_s) 
 * 변환(OmokCursor|_to_)
-* 변환(Str|_to_)
 ********************************************************************/
 
 /**
@@ -261,20 +324,8 @@ Stone _Stone(OmokCoord locate, StoneType type);
 */
 void set_Stone(Stone* obj, OmokCoord locate, StoneType type);
 
-/** 
-* @fn Stone OmokCursor_to_Stone(OmokCursor* obj);
-* @brief OmokCursor 객체를 Stone 객체로 변환
-* @param OmokCursor* obj	: 변환할 OmokCursor의 주소값
-* @return Stone				: 변환된 Stone 객체
-*
-* @author daol
-* @date 2020-11-27 02:30
-* @version 0.0.1
-*/
-Stone OmokCursor_to_Stone(OmokCursor* obj);
-
 /**
-* @fn Stone Str_to_Stone(const char* locate, const char* type);
+* @fn Stone _sStone(const char* locate, const char* type);
 * @brief 문자열으로 Stone 객체 생성
 * @param const char* locate	: 문자열로 표현된 오목알 객체("a19" 또는 "A19")
 * @param const char* type	: 문자열로 표현된 오목알 종류("w", "white", "Black" 등)
@@ -284,7 +335,32 @@ Stone OmokCursor_to_Stone(OmokCursor* obj);
 * @date 2020-11-27 19:05
 * @version 0.0.1
 */
-Stone Str_to_Stone(const char* locate, const char* type);
+Stone _sStone(const char* locate, const char* type);
+
+/**
+* @fn set_Stone(Stone* obj, OmokCoord locate, StoneType type);
+* @brief 문자열로 Stone 객체 설정
+* @param const char* locate	: 문자열로 표현된 오목알 객체 설정값("a19" 또는 "A19")
+* @param const char* type	: 문자열로 표현된 오목알 종류 설정값("w", "white", "Black" 등)
+* @return void
+*
+* @author lja3723
+* @date 2020-11-27 10:35
+* @version 0.0.1
+*/
+void set_sStone(Stone* obj, const char* locate, const char* type);
+
+/** 
+* @fn Stone OmokCursor_to_Stone(OmokCursor* obj);
+* @brief OmokCursor 객체를 Stone 객체로 변환
+* @param OmokCursor* obj	: 변환할 OmokCursor의 주소값
+* @return Stone				: 변환된 Stone 객체
+*
+* @author lja3723
+* @date 2020-11-27 20:40
+* @version 0.0.1
+*/
+Stone OmokCursor_to_Stone(OmokCursor* obj);
 
 
 
