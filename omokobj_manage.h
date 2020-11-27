@@ -137,7 +137,7 @@
 
 
 /*****************************************************************
-* TODO:	없음
+* TODO:	Done
 *					OmokCoord management
 * 생성(_) 설정(set)
 * 문자열로 생성(_s) 문자열로 설정(set_s)
@@ -195,7 +195,7 @@ OmokCoord _sOmokCoord(const char* str);
 void set_sOmokCoord(OmokCoord* obj, const char* set);
 
 /*******************************************************************
-* TODO: 없음
+* TODO: Done
 *					StoneType management
 * 문자열로 생성(_s)
 ********************************************************************/
@@ -214,7 +214,7 @@ StoneType _sStoneType(const char* str);
 
 
 /*******************************************************************
-* TODO:	없음
+* TODO:	Done
 *					OmokCursor management
 * 생성(_) 설정(set) 
 * 문자열로 생성(_s) 문자열로 설정(set_s)
@@ -290,7 +290,7 @@ OmokCursor Stone_to_OmokCursor(Stone *obj);
 
 
 /*******************************************************************
-* TODO:	
+* TODO:	Done
 *					Stone management
 * 생성(_) 설정(set) 
 * 문자열로 생성(_s) 문자열로 설정(set_s) 
