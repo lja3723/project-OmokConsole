@@ -35,6 +35,18 @@
 * 반환값				: !valid_객체() - 객체가 유효하지 않으면(NULL 등) 1, 유효하면 0 반환
 */
 
+//양식
+/**
+* @fn
+* @brief
+* @param
+* @return
+*
+* @author
+* @date
+* @version
+*/
+
 
 /********************************* 본문 *************************************/
 
@@ -130,9 +142,20 @@ int invalid_StoneType(StoneType* obj);
 /*******************************************************************
 *						StoneNode judgment
 * 유효성(valid) 반유효성(invalid)
+* 동적 할당 객체 여부 검사(is_StoneNode_dynamic)
 ********************************************************************/
 
-
+/**
+* @fn int is_StoneNode_dynamic(StoneNode* obj);
+* @brief obj이 동적 할당된 StoneNode인지 검사
+* @param StoneNode* obj	: 검사할 StoneNode 객체의 주소값
+* @return int			: 동적 할당된 StoneNode이면 1, 아니면 0 반환
+*
+* @author lja3723
+* @date 2020-11-27 21:50
+* @version 0.0.1
+*/
+int is_StoneNode_dynamic(StoneNode* obj);
 
 
 

@@ -111,13 +111,15 @@ typedef struct {
 * @details	오목알 객체를 저장하는 노드 구현
 * 
 * @var Stone stone				오목알 정보
+* @var int is_dynamic			동적 할당된 객체인지 표현(1: 동적 할당, 0: 정적 할당)
 * @var struct _STONENODE* next	다음 오목알 노드를 가리키는 포인터 
 *
 * @author	lja3723
 * @date		2020-11-24	21:40
 * @version	0.0.1
 */
-typedef struct {
+typedef struct _STONENODE{
+	int is_dynamic;				/* 동적 할당된 객체인지 표현(1: 동적 할당, 0: 정적 할당) */
 	Stone stone;				/* 오목알 정보 */
 	struct _STONENODE* next;	/* 다음 오목알 노드를 가리키는 포인터 */
 } StoneNode;
