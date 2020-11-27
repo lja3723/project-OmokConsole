@@ -2,7 +2,6 @@
 #define __OMOKOBJ_JUDGE_H__
 
 #include "omokobj.h"
-#include "omokobj_manage.h"
 
 /**
 * @file omokobj_judge.h

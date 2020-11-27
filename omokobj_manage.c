@@ -98,5 +98,5 @@ void set_OmokCursor(OmokCursor* obj, OmokCoord locate, StoneType type)
 
 void set_Stone(Stone* obj, OmokCoord locate, StoneType type)
 {
-	return 0;
+
 }
