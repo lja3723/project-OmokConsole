@@ -315,7 +315,7 @@ OmokPanelType _sOmokPanelType(const char* str)
 
 
 /**************************************************
-*			OmokPanelType Management def
+*			OmokPanel Management def
 ***************************************************/
 
 int init_OmokPanel(OmokPanel* obj, OmokPanelType type)
@@ -339,4 +339,8 @@ int modify_type_OmokPanel(OmokPanel* obj, OmokPanelType type)
 }
 
 
+
+/**************************************************
+*			OmokStatus Management def
+***************************************************/
 

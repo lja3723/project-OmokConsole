@@ -634,7 +634,7 @@ int modify_type_OmokPanel(OmokPanel* obj, OmokPanelType type);
 /*******************************************************************
 * TODO:	
 *					OmokStatus management
-* 생성(_) 설정(set)
+* 
 ********************************************************************/
 
 /**
