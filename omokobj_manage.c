@@ -201,7 +201,7 @@ StoneNode* detach_nextStoneNode(StoneNode* obj)
 	return detached_node;
 }
 
-int connect_nextStoneNode(StoneNode* obj, StoneNode* target)
+int attach_nextStoneNode(StoneNode* obj, StoneNode* target)
 {
 	if (obj->next == NULL && is_StoneNode_dynamic(target))
 	{
@@ -246,11 +246,52 @@ StoneNode* deepcopy_StoneNode(StoneNode* obj)
 
 
 
+
 /**************************************************
 *			StoneStorage Management def
 ***************************************************/
 
 
+int init_StoneStorage(StoneStorage* obj, OmokPanelType type)
+{
+	return 0;
+}
+
+int finalize_StoneStorage(StoneStorage* obj)
+{
+	return 0;
+}
+
+int deepcopy_StoneStorage(StoneStorage* obj, StoneStorage* target)
+{
+	return 0;
+}
+
+int modify_type_StoneStorage(StoneStorage* obj, OmokPanelType* type)
+{
+	return 0;
+}
+
+int save_Stone_to(StoneStorage* obj, Stone stone)
+{
+	return 0;
+}
+
+Stone view_Stone_from(StoneStorage* obj, OmokCoord locate)
+{
+	Stone result = {locate, ERR_ST};
+	return result;
+}
+
+int delete_Stone_from(StoneStorage* obj, OmokCoord locate)
+{
+	return 0;
+}
+
+int clear_all_Stone_from(StoneStorage* obj)
+{
+	return 0;
+}
 
 
 

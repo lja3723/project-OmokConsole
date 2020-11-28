@@ -324,7 +324,7 @@ Stone OmokCursor_to_Stone(OmokCursor* obj);
 * 생성(_) 설정(set)
 * 동적 생성(new) 동적 해제(free) 
 * next 노드 분리(detach_nextStoneNode)
-* next 노드 연결(connect_nextStoneNode)
+* next 노드 연결(attach_nextStoneNode)
 * 깊은 복사(deepcopy)
 ********************************************************************/
 
@@ -412,7 +412,7 @@ StoneNode* detach_nextStoneNode(StoneNode* obj);
 * @date 2020-11-27 22:15
 * @version 0.0.1
 */
-int connect_nextStoneNode(StoneNode* obj, StoneNode* target);
+int attach_nextStoneNode(StoneNode* obj, StoneNode* target);
 
 /**
 * @fn StoneNode copy_StoneNode(StoneNode* obj);
@@ -430,18 +430,122 @@ StoneNode* deepcopy_StoneNode(StoneNode* obj);
 
 
 /*******************************************************************
-* TODO:	
+* TODO:	선언 및 빈 정의 완료. 함수 내용 작성해야 함
 *					StoneStorage management
-* 생성(_) 설정(set)
-* 깊은 복사(deepcopy) 제거(delete)
-* 
+* 초기화(init) 마무리(finalize)
+* 깊은 복사(deepcopy)
+* 타입 수정(modify_type)
+* 오목알 저장(save_Stone_to)
+* 오목알 보기(view_Stone_from)
+* 오목알 삭제(delete_Stone_from)
+* 오목알 모두 삭제(clear_all_Stone_from)
 * 
 ********************************************************************/
 
+/**
+* @fn int init_StoneStorage(StoneStorage* obj, OmokPanelType type);
+* @brief StoneStorage 객체(정적 변수)를 type에 맞게 초기화함.
+*		초기화한 객체는 사용 후 메모리 누수를 방지하기 위해 반드시 마무리 함수(finalize)의 인자로 전달해야 함
+* @param StoneStorage* obj	: 초기화할 정적 StoneStorage 객체의 주소값
+* @param OmokPanelType type	: 초기화될 객체의 오목판 크기
+* @return int				: 잘 초기화되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 13:42
+* @version 0.0.1
+*/
+int init_StoneStorage(StoneStorage* obj, OmokPanelType type);
 
+/**
+* @fn int finalize_StoneStorage(StoneStorage* obj);
+* @brief 초기화된 StoneStorage 객체(정적 변수)를 초기화 해제(마무리)하는 함수
+* @param StoneStorage* obj	: 초기화 해제할 정적 StoneStorage 객체의 주소값
+* @return int				: 잘 마무리되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 13:49
+* @version 0.0.1
+*/
+int finalize_StoneStorage(StoneStorage* obj);
 
+/**
+* @fn StoneStorage deepcopy_StoneStorage(StoneStorage* obj);
+* @brief 초기화된 정적 StoneStorage 객체(target)를 obj에 깊은 복사하는 함수
+* @param StoneStorage* obj		: 깊은 복사된 StoneStorage 객체를 저장할 주소값, 초기화되지 않은 객체여야 함
+* @param StoneStorage* target	: 깊은 복사할 목표 객체의 주소값, 초기화된 객체여야 함
+* @return int					: 깊은 복사가 잘 되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 13:50
+* @version 0.0.1
+*/
+int deepcopy_StoneStorage(StoneStorage* obj, StoneStorage* target);
 
+/**
+* @fn int modify_type_StoneStorage(StoneStorage* obj, OmokPanelType* type);
+* @brief obj의 type을 수정하는 함수. obj은 초기화된 객체여야 함. 
+		변경할 type이 기존 type보다 작다면 정보가 손실될 수 있음
+* @param StoneStorage* obj		: type을 수정할 초기화된 StoneStorage 객체의 주소값
+* @param OmokPanelType* type	: obj에 새로 적용할 오목판 종류 정보
+* @return int					: 수정이 잘 되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 13:50
+* @version 0.0.1
+*/
+int modify_type_StoneStorage(StoneStorage* obj, OmokPanelType* type);
 
+/**
+* @fn int save_Stone_to(StoneStorage* obj, Stone stone);
+* @brief StoneStorage에 바둑알을 저장함
+* @param StoneStorage* obj		: 바둑알을 저장할 StoneStorage 객체의 주소값(초기화된 상태여야 함)
+* @param Stone stone			: 저장할 바둑알 정보
+* @return int					: 잘 저장되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 14:30
+* @version 0.0.1
+*/
+int save_Stone_to(StoneStorage* obj, Stone stone);
+
+/**
+* @fn Stone view_Stone_from(StoneStorage* obj, OmokCoord locate);
+* @brief obj에서 locate에 있는 바둑알을 보여주는 함수(바둑알은 제거되지 않음)
+* @param StoneStorage* obj	: 바둑알을 볼 객체의 주소값(초기화된 상태여야 함)
+* @param OmokCoord locate	: 바둑알을 볼 좌표
+* @return int				: locate에 바둑알이 있으면 바둑알 객체가, 
+		없으면 바둑알 종류가 ERR_ST인 바둑알 객체가 반환됨
+*
+* @author lja3723
+* @date 2020-11-28 14:35
+* @version 0.0.1
+*/
+Stone view_Stone_from(StoneStorage* obj, OmokCoord locate);
+
+/**
+* @fn int delete_Stone_from(StoneStorage* obj, OmokCoord locate);
+* @brief StoneStorage 객체의 locate에 있는 바둑알을 제거함
+* @param StoneStorage* obj	: 바둑알을 제거할 StoneStorage 객체의 주소값(초기화된 상태여야 함)
+* @param OmokCoord locate	: 제거할 바둑알의 좌표
+* @return int				: 제거되었으면 1, 좌표에 바둑알이 없거나 제거가 안됐으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 14:35
+* @version 0.0.1
+*/
+int delete_Stone_from(StoneStorage* obj, OmokCoord locate);
+
+/**
+* @fn int clear_all_Stone_from(StoneStorage* obj);
+* @brief obj에 저장된 모든 바둑알을 제거하는 함수
+* @param StoneStorage* obj	: 바둑알을 모두 제거할 StoneStorage 객체의 주소값(초기화된 상태여야 함)
+* @return int				: 잘 제거되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 14:48
+* @version 0.0.1
+*/
+int clear_all_Stone_from(StoneStorage* obj);
 
 /*******************************************************************
 * TODO:	Done

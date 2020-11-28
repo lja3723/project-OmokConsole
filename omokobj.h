@@ -130,7 +130,7 @@ typedef struct _STONENODE{
 * @struct	StoneStorage
 * @brief	오목알 저장 객체
 * @details	오목알을 저장하는 자료구조를 정의하는 객체
-*			연결 리스트로 구현
+*			연결 리스트로 구현, 동적 객체를 생성하면 안 됨
 * 
 * @var StoneNode** header	: 동적할당으로 구현된 StoneNode 포인터 배열: 행 표현
 * @var int size				: 포인터 배열의 크기
