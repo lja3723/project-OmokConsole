@@ -124,9 +124,31 @@ int invalid_StoneType(StoneType* obj);
 * 유효성(valid) 반유효성(invalid)
 ********************************************************************/
 
+/**
+* int valid_OmokCursor(OmokCursor* obj);
+* @brief OmokCursor 유효성 검사:
+*		
+* @param OmokCursor* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int valid_OmokCursor(OmokCursor* obj);
 
-
-
+/**
+* int invalid_OmokCursor(OmokCursor* obj);
+* @brief OmokCursor 유효성 검사:
+*		
+* @param OmokCursor* obj		: 
+* @return int				: 유효하면 0, 그렇지 않으면  반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int valid_OmokCursor(OmokCursor* obj);
 
 
 /*******************************************************************
@@ -134,8 +156,31 @@ int invalid_StoneType(StoneType* obj);
 * 유효성(valid) 반유효성(invalid)
 ********************************************************************/
 
+/**
+* int valid_Stone(Stone* obj);
+* @brief Stone 유효성 검사:
+*		
+* @param Stone* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int valid_Stone(Stone* obj);
 
-
+/**
+* int invalid_Stone(Stone* obj);
+* @brief Stone 유효성 검사:
+*		
+* @param Stone* obj		: 
+* @return int				: 유효하면 0, 그렇지 않으면 1 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int invalid_Stone(Stone* obj);
 
 
 
@@ -165,9 +210,33 @@ int is_StoneNode_dynamic(StoneNode* obj);
 * 유효성(valid) 반유효성(invalid)
 ********************************************************************/
 
+/**
+* int valid_StoneStorage(StoneStorage* obj);
+@brief Stone 유효성 검사:
+*		
+* @param StoneStorage* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
 
+int valid_StoneStorage(StoneStorage* obj);
 
+/**
+* int invalid_StoneStorage(StoneStorage* obj);
+@brief Stone 유효성 검사:
+*		
+* @param StoneStorage* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
 
+int invalid_StoneStorage(StoneStorage* obj);
 
 
 /*******************************************************************
@@ -175,9 +244,31 @@ int is_StoneNode_dynamic(StoneNode* obj);
 * 유효성(valid) 반유효성(invalid)
 ********************************************************************/
 
+/**
+* int valid_OmokPanelType(OmokPanelType* obj);
+@brief OmokPanelType 유효성 검사:
+*		
+* @param OmokPanelType* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int valid_OmokPanelType(OmokPanelType* obj);
 
-
-
+/**
+* int invalid_OmokPanelType(OmokPanelType* obj);
+@brief OmokPanelType 유효성 검사:
+*		
+* @param OmokPanelType* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int invalid_OmokPanelType(OmokPanelType* obj);
 
 
 /*******************************************************************
@@ -185,9 +276,31 @@ int is_StoneNode_dynamic(StoneNode* obj);
 * 유효성(valid) 반유효성(invalid)
 ********************************************************************/
 
+/**
+* int valid_OmokPanel(OmokPanel* obj);
+* @brief OmokPanel 유효성 검사:
+*		
+* @param OmokPanel* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int valid_OmokPanel(OmokPanel* obj);
 
-
-
+/**
+* int invalid_OmokPanel(OmokPanel* obj);
+* @brief OmokPanel 유효성 검사:
+*		
+* @param OmokPanel* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int invalid_OmokPanel(OmokPanel* obj);
 
 
 /*******************************************************************
@@ -195,10 +308,31 @@ int is_StoneNode_dynamic(StoneNode* obj);
 * 유효성(valid) 반유효성(invalid)
 ********************************************************************/
 
+/**
+* int valid_OmokStatus(OmokStatus* obj);
+* @brief OmokStatus 유효성 검사:
+*		
+* @param OmokStatus* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int valid_OmokStatus(OmokStatus* obj);
 
-
-
-
+/**
+* int invalid_OmokStatus(OmokStatus* obj);
+* @brief OmokStatus 유효성 검사:
+*		
+* @param OmokStatus* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int invalid_OmokStatus(OmokStatus* obj);
 
 
 /*******************************************************************
@@ -206,11 +340,32 @@ int is_StoneNode_dynamic(StoneNode* obj);
 * 유효성(valid) 반유효성(invalid)
 ********************************************************************/
 
+/**
+* int valid_Omok(Omok* obj);
+* @brief Omok 유효성 검사:
+*		
+* @param Omok* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int valid_Omok(Omok* obj);
 
+/**
+* int invalid_Omok(Omok* obj);
+* @brief Omok 유효성 검사:
+*		
+* @param Omok* obj		: 
+* @return int				: 유효하면 1, 그렇지 않으면 0 반환
+*
+* @author daol
+* @date 2020-11-28 13:34
+* @version 0.0.1
+*/
+int invalid_Omok(Omok* obj);
 
-
-
-
-
+
 /********************************* /본문 *************************************/
 #endif
