@@ -469,7 +469,7 @@ int init_StoneStorage(StoneStorage* obj, OmokPanelType type);
 int finalize_StoneStorage(StoneStorage* obj);
 
 /**
-* @fn StoneStorage deepcopy_StoneStorage(StoneStorage* obj);
+* @fn int deepcopy_StoneStorage(StoneStorage* obj, StoneStorage* target);
 * @brief 초기화된 정적 StoneStorage 객체(target)를 obj에 깊은 복사하는 함수
 * @param StoneStorage* obj		: 깊은 복사된 StoneStorage 객체를 저장할 주소값, 초기화되지 않은 객체여야 함
 * @param StoneStorage* target	: 깊은 복사할 목표 객체의 주소값, 초기화된 객체여야 함
@@ -569,14 +569,65 @@ OmokPanelType _sOmokPanelType(const char *str);
 
 
 /*******************************************************************
-* TODO:	
+* TODO:	선언 및 빈 정의 완료. 함수 내용 작성해야 함
 *					OmokPanel management
-* 생성(_) 설정(set)
-* 복사(copy) 제거(delete)
+* 초기화(init) 마무리(finalize)
+* 깊은 복사(deepcopy)
+* 타입 수정(modify_type)
 ********************************************************************/
 
+/**
+* @fn int init_OmokPanel(OmokPanel* obj, OmokPanelType type);
+* @brief OmokPanel 객체(정적 변수)를 type에 맞게 초기화함.
+*		초기화한 객체는 사용 후 메모리 누수를 방지하기 위해 반드시 마무리 함수(finalize)의 인자로 전달해야 함
+* @param OmokPanel* obj		: 초기화할 정적 OmokPanel 객체의 주소값
+* @param OmokPanelType type	: 초기화될 객체의 오목판 크기
+* @return int				: 잘 초기화되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 15:10
+* @version 0.0.1
+*/
+int init_OmokPanel(OmokPanel* obj, OmokPanelType type);
 
+/**
+* @fn int finalize_OmokPanel(OmokPanel* obj);
+* @brief 초기화된 OmokPanel 객체(정적 변수)를 초기화 해제(마무리)하는 함수
+* @param OmokPanel* obj		: 초기화 해제할 정적 OmokPanel 객체의 주소값
+* @return int				: 잘 마무리되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 15:10
+* @version 0.0.1
+*/
+int finalize_OmokPanel(OmokPanel* obj);
 
+/**
+* @fn int deepcopy_OmokPanel(OmokPanel* obj, OmokPanel* target);
+* @brief 초기화된 정적 OmokPanel 객체(target)를 obj에 깊은 복사하는 함수
+* @param OmokPanel* obj		: 깊은 복사된 OmokPanel 객체를 저장할 주소값, 초기화되지 않은 객체여야 함
+* @param OmokPanel* target	: 깊은 복사할 목표 객체의 주소값, 초기화된 객체여야 함
+* @return int				: 깊은 복사가 잘 되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 15:10
+* @version 0.0.1
+*/
+int deepcopy_OmokPanel(OmokPanel* obj, OmokPanel* target);
+
+/**
+* @fn int modify_type_OmokPanel(OmokPanel* obj, OmokPanelType type);
+* @brief obj의 type을 수정하는 함수. obj은 초기화된 객체여야 함.
+		변경할 type이 기존 type보다 작다면 정보가 손실될 수 있음
+* @param OmokPanel* obj			: type을 수정할 초기화된 OmokPanel 객체의 주소값
+* @param OmokPanelType* type	: obj에 새로 적용할 오목판 종류 정보
+* @return int					: 수정이 잘 되었으면 1, 그렇지 않으면 0 반환
+*
+* @author lja3723
+* @date 2020-11-28 15:10
+* @version 0.0.1
+*/
+int modify_type_OmokPanel(OmokPanel* obj, OmokPanelType type);
 
 
 

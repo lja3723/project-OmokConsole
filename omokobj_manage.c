@@ -246,11 +246,9 @@ StoneNode* deepcopy_StoneNode(StoneNode* obj)
 
 
 
-
 /**************************************************
 *			StoneStorage Management def
 ***************************************************/
-
 
 int init_StoneStorage(StoneStorage* obj, OmokPanelType type)
 {
@@ -295,8 +293,6 @@ int clear_all_Stone_from(StoneStorage* obj)
 
 
 
-
-
 /**************************************************
 *			OmokPanelType Management def
 ***************************************************/
@@ -315,4 +311,32 @@ OmokPanelType _sOmokPanelType(const char* str)
 
 	return obj;
 }
+
+
+
+/**************************************************
+*			OmokPanelType Management def
+***************************************************/
+
+int init_OmokPanel(OmokPanel* obj, OmokPanelType type)
+{
+	return 0;
+}
+
+int finalize_OmokPanel(OmokPanel* obj)
+{
+	return 0;
+}
+
+int deepcopy_OmokPanel(OmokPanel* obj, OmokPanel* target)
+{
+	return 0;
+}
+
+int modify_type_OmokPanel(OmokPanel* obj, OmokPanelType type)
+{
+	return 0;
+}
+
+
 
