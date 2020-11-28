@@ -250,43 +250,38 @@ StoneNode* deepcopy_StoneNode(StoneNode* obj)
 *			StoneList Management def
 ***************************************************/
 
-int init_StoneList(StoneList* obj, OmokPanelType type)
+StoneList _StoneList(int size, StoneNode* header)
+{
+	StoneList obj = { 0, size, header };
+	return obj;
+}
+
+StoneList* new_StoneList(StoneList obj)
 {
 	return 0;
 }
 
-int finalize_StoneList(StoneList* obj)
+int free_StoneList(StoneList* obj)
+{
+	return 0;
+}
+
+int addNode_to(StoneList* list, StoneNode node)
+{
+	return 0;
+}
+
+int deleteNode_from(StoneList* list, StoneNode node)
+{
+	return 0;
+}
+
+int clearallNode_from(StoneList* list)
 {
 	return 0;
 }
 
 int deepcopy_StoneList(StoneList* obj, StoneList* target)
-{
-	return 0;
-}
-
-int modify_type_StoneList(StoneList* obj, OmokPanelType* type)
-{
-	return 0;
-}
-
-int save_Stone_to(StoneList* obj, Stone stone)
-{
-	return 0;
-}
-
-Stone view_Stone_from(StoneList* obj, OmokCoord locate)
-{
-	Stone result = {locate, ERR_ST};
-	return result;
-}
-
-int delete_Stone_from(StoneList* obj, OmokCoord locate)
-{
-	return 0;
-}
-
-int clear_all_Stone_from(StoneList* obj)
 {
 	return 0;
 }
@@ -338,9 +333,112 @@ int modify_type_OmokPanel(OmokPanel* obj, OmokPanelType type)
 	return 0;
 }
 
+int addStone_to(OmokPanel* panel, Stone stone)
+{
+	return 0;
+}
+
+StoneType lookupStone_from(OmokPanel* panel, OmokCoord locate)
+{
+	return ERR_ST;
+}
+
+StoneType deleteStone_from(OmokPanel* panel, OmokCoord locate)
+{
+	return ERR_ST;
+}
+
+int clearallStone_from(OmokPanel* obj)
+{
+	return 0;
+}
+
+StoneNode* get_StoneNodeptr_from(OmokPanel* panel, OmokCoord locate)
+{
+	return NULL;
+}
+
 
 
 /**************************************************
 *			OmokStatus Management def
 ***************************************************/
 
+int init_OmokStatus(OmokStatus* obj)
+{
+	return 0;
+}
+
+int finalize_OmokStatus(OmokStatus* obj)
+{
+	return 0;
+}
+ 
+int deepcopy_OmokStatus(OmokStatus* obj, OmokStatus* target)
+{
+	return 0;
+}
+ 
+int clear_OmokStatus(OmokStatus* obj)
+{
+	return 0;
+}
+ 
+int turns_up(OmokStatus* obj, StoneNode* released)
+{
+	return 0;
+}
+ 
+StoneNode* turns_down(OmokStatus* obj)
+{
+	return NULL;
+}
+ 
+int ordersize_up(OmokStatus* obj)
+{
+	return 0;
+}
+ 
+int ordersize_down(OmokStatus* obj)
+{
+	return 0;
+}
+ 
+int get_turns(OmokStatus* obj)
+{
+	return 0;
+}
+ 
+int get_ordersize(OmokStatus* obj)
+{
+	return 0;
+}
+ 
+Stone get_StoneInfo_from(OmokStatus* obj, int turns)
+{
+	Stone result = { _sOmokCoord("") , ERR_ST };
+	return result;
+}
+ 
+
+
+
+/**************************************************
+*			OmokStatus Management def
+***************************************************/
+
+int init_Omok(Omok* obj, OmokPanelType type)
+{
+	return 0;
+}
+ 
+int finalize_Omok(Omok* obj)
+{
+	return 0;
+}
+ 
+int deepcopy_Omok(Omok* obj, Omok* target)
+{
+	return 0;
+}
+ 

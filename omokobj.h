@@ -1,6 +1,9 @@
 ﻿#ifndef __OMOKOBJ_H__
 #define __OMOKOBJ_H__
 
+/** OmokStatus의 버퍼 크기 (기본값 8) */
+#define __OMOKOBJ_OMOKSTATUS_BUFF__ 8
+
 /**
 * @file omokobj.h
 *
@@ -129,19 +132,19 @@ typedef struct _STONENODE{
 /**
 * @struct	StoneList
 * @brief	오목알 리스트
-* @details	오목알을 저장하는 자료구조를 정의하는 객체
-*			연결 리스트로 구현, 동적 객체를 생성하면 안 됨
+* @details	오목알을 저장하는 자료구조를 구현한 객체
 * 
-* @var StoneNode** header	: 동적할당으로 구현된 StoneNode 포인터 배열: 행 표현
-* @var int size				: 포인터 배열의 크기
+* @var int size				: 리스트의 크기
+* @var StoneNode* header	: StoneNode 연결 리스트를 가리키는 헤더
 *
 * @author	lja3723
-* @date		2020-11-24	21:40
+* @date		2020-11-28	15:40
 * @version	0.0.1
 */
 typedef struct {
-	StoneNode** header;	/* 동적할당으로 구현된 StoneNode 포인터 배열: 행 표현 */
-	int size;			/* 포인터 배열의 크기 */
+	int is_dynamic;		/* 동적 할당된 객체인지 표현(1: 동적 할당, 0: 정적 할당) */
+	int size;			/* 리스트의 크기 */
+	StoneNode* header;	/* 동적할당으로 구현된 StoneNode 포인터 배열: 행 표현 */
 } StoneList;
 
 
@@ -170,10 +173,10 @@ typedef enum {
 /**
 * @struct	OmokPanel
 * @brief	오목판 객체
-* @details	오목판 타입, 오목알 리스트를 표현
+* @details	오목판 타입과 오목알 리스트 동적 배열로 오목알 저장 storage 구현
 * 
 * @var OmokPanelType type	: 오목판 타입(regular, jumbo)
-* @var StoneList storage	: 오목알 리스트
+* @var StoneList* storage	: 오목알 리스트 동적 배열
 *
 * @author	lja3723
 * @date		2020-11-24	20:10
@@ -181,7 +184,7 @@ typedef enum {
 */
 typedef struct {
 	OmokPanelType type;		/* 오목판 타입(regular, jumbo) */
-	StoneList storage;	/* 오목알 리스트 */
+	StoneList* storage;	    /* 오목알 저장, StoneList 동적 배열임 */
 } OmokPanel;
 
 
@@ -189,20 +192,26 @@ typedef struct {
 /**
 * @struct	OmokStatus
 * @brief	게임 진행 현황 객체
-* @details	착수 차례(오목알 정보 객체), 착수 횟수, 착수 좌표정보를 표현
+* @details	착수 횟수와 착수 순서를 표현한다. 착수 순서는 StoneNode 포인터의 동적 배열로, 각 원소는
+*		오목판의 Node를 가리키며 동적 배열의 인덱스는 해당 Node가 오목판에 몇번째로 생성되었는지 나타낸다.
+*		buff크기는 __OMOKOBJ_OMOKSTATUS_BUFF__로 초기화된다.
+*		착수 순서 배열은 처음에 크기가 buff이고, 착수 횟수가 size를 초과할 때마다 size는 buff만큼 증가한다.
+*		배수만큼 증가한다.
 * 
-* @var StoneType whose_turn		: 착수 차례(Black, White)
-* @var int turns					: 착수 횟수
-* @var OmokCoord prev_put_locate	: 바로 전 착수한 좌표 정보
-*
+* @var int turns				: 착수 횟수
+* @var StoneNode** stone_order	: 착수 순서를 저장하는 동적 배열
+* @var int ordersize			: stone_order의 크기
+* @var int buff					: 버퍼
+* 
 * @author	lja3723
-* @date		2020-11-24	20:30
-* @version	0.0.1
+* @date		2020-11-28 20:25
+* @version	0.0.2
 */
 typedef struct {
-	StoneType whose_turn;		/* 착수 차례(Black, White) */
 	int	turns;					/* 착수 횟수 */
-	OmokCoord prev_put_locate;	/* 바로 전 착수한 좌표 정보 */
+	StoneNode** stone_order;	/* 착수 순서를 저장하는 동적 배열 */
+	int ordersize;				/* stone_order 크기 */
+	int buff;					/* 착수 순서 버퍼(define으로 정의됨) */
 } OmokStatus;
 
 
