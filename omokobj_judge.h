@@ -206,15 +206,15 @@ int is_StoneNode_dynamic(StoneNode* obj);
 
 
 /*******************************************************************
-*						StoneStorage judgment
+*						StoneList judgment
 * 유효성(valid) 반유효성(invalid)
 ********************************************************************/
 
 /**
-* int valid_StoneStorage(StoneStorage* obj);
+* int valid_StoneList(StoneList* obj);
 @brief Stone 유효성 검사:
 *		
-* @param StoneStorage* obj		: 
+* @param StoneList* obj		: 
 * @return int				: 유효하면 1, 그렇지 않으면 0 반환
 *
 * @author daol
@@ -222,13 +222,13 @@ int is_StoneNode_dynamic(StoneNode* obj);
 * @version 0.0.1
 */
 
-int valid_StoneStorage(StoneStorage* obj);
+int valid_StoneList(StoneList* obj);
 
 /**
-* int invalid_StoneStorage(StoneStorage* obj);
+* int invalid_StoneList(StoneList* obj);
 @brief Stone 유효성 검사:
 *		
-* @param StoneStorage* obj		: 
+* @param StoneList* obj		: 
 * @return int				: 유효하면 1, 그렇지 않으면 0 반환
 *
 * @author daol
@@ -236,7 +236,7 @@ int valid_StoneStorage(StoneStorage* obj);
 * @version 0.0.1
 */
 
-int invalid_StoneStorage(StoneStorage* obj);
+int invalid_StoneList(StoneList* obj);
 
 
 /*******************************************************************

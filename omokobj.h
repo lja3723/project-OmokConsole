@@ -13,10 +13,10 @@
 * 오목알 타입 열거형	: StoneType		오목알 종류
 * 커서 객체			: OmokCursor	오목알 정보, 좌표정보
 * 오목알 객체		: Stone			오목알 정보, 좌표정보
-* 오목알 노드		: StoneNode		오목알 저장 객체의 구성 객체
-* 오목알 저장 객체	: StoneStorage	연결 리스트 사용한 구현 
+* 오목알 노드		: StoneNode		오목알 리스트의 구성 객체
+* 오목알 리스트		: StoneList		연결 리스트 사용한 구현 
 * 오목판 타입 열거형	: OmokPanelType	오목판 종류
-* 오목판 객체		: OmokPanel		오목판 크기, 오목알 저장 객체
+* 오목판 객체		: OmokPanel		오목판 크기, 오목알 리스트
 * 게임 진행 현황 객체	: OmokStatus	착수 차례, 착수 회수, 착수 좌표정보
 * 통합 객체			: Omok			커서, 오목판, 게임 진행 현황 객체
 */
@@ -127,8 +127,8 @@ typedef struct _STONENODE{
 
 
 /**
-* @struct	StoneStorage
-* @brief	오목알 저장 객체
+* @struct	StoneList
+* @brief	오목알 리스트
 * @details	오목알을 저장하는 자료구조를 정의하는 객체
 *			연결 리스트로 구현, 동적 객체를 생성하면 안 됨
 * 
@@ -142,7 +142,7 @@ typedef struct _STONENODE{
 typedef struct {
 	StoneNode** header;	/* 동적할당으로 구현된 StoneNode 포인터 배열: 행 표현 */
 	int size;			/* 포인터 배열의 크기 */
-} StoneStorage;
+} StoneList;
 
 
 
@@ -170,10 +170,10 @@ typedef enum {
 /**
 * @struct	OmokPanel
 * @brief	오목판 객체
-* @details	오목판 타입, 오목알 저장 객체를 표현
+* @details	오목판 타입, 오목알 리스트를 표현
 * 
 * @var OmokPanelType type	: 오목판 타입(regular, jumbo)
-* @var StoneStorage storage	: 오목알 저장 객체
+* @var StoneList storage	: 오목알 리스트
 *
 * @author	lja3723
 * @date		2020-11-24	20:10
@@ -181,7 +181,7 @@ typedef enum {
 */
 typedef struct {
 	OmokPanelType type;		/* 오목판 타입(regular, jumbo) */
-	StoneStorage storage;	/* 오목알 저장 객체 */
+	StoneList storage;	/* 오목알 리스트 */
 } OmokPanel;
 
 

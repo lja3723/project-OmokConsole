@@ -247,46 +247,46 @@ StoneNode* deepcopy_StoneNode(StoneNode* obj)
 
 
 /**************************************************
-*			StoneStorage Management def
+*			StoneList Management def
 ***************************************************/
 
-int init_StoneStorage(StoneStorage* obj, OmokPanelType type)
+int init_StoneList(StoneList* obj, OmokPanelType type)
 {
 	return 0;
 }
 
-int finalize_StoneStorage(StoneStorage* obj)
+int finalize_StoneList(StoneList* obj)
 {
 	return 0;
 }
 
-int deepcopy_StoneStorage(StoneStorage* obj, StoneStorage* target)
+int deepcopy_StoneList(StoneList* obj, StoneList* target)
 {
 	return 0;
 }
 
-int modify_type_StoneStorage(StoneStorage* obj, OmokPanelType* type)
+int modify_type_StoneList(StoneList* obj, OmokPanelType* type)
 {
 	return 0;
 }
 
-int save_Stone_to(StoneStorage* obj, Stone stone)
+int save_Stone_to(StoneList* obj, Stone stone)
 {
 	return 0;
 }
 
-Stone view_Stone_from(StoneStorage* obj, OmokCoord locate)
+Stone view_Stone_from(StoneList* obj, OmokCoord locate)
 {
 	Stone result = {locate, ERR_ST};
 	return result;
 }
 
-int delete_Stone_from(StoneStorage* obj, OmokCoord locate)
+int delete_Stone_from(StoneList* obj, OmokCoord locate)
 {
 	return 0;
 }
 
-int clear_all_Stone_from(StoneStorage* obj)
+int clear_all_Stone_from(StoneList* obj)
 {
 	return 0;
 }
